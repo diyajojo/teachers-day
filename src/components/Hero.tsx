@@ -104,14 +104,54 @@ export default function Hero() {
       className="relative w-full flex-1 flex flex-col md:flex-row items-center justify-between px-8 md:px-12 lg:px-24 py-8 gap-12"
       onMouseEnter={() => setAutoPlay(false)}
     >
-      {/* Floating decorations */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <span className="absolute top-[12%] left-[8%] text-pink-300/50 text-3xl">♡</span>
-        <span className="absolute top-[30%] right-[6%] text-purple-300/40 text-2xl">✦</span>
-        <span className="absolute bottom-[18%] left-[10%] text-pink-400/30 text-xl">✿</span>
-        <span className="absolute bottom-[25%] right-[8%] text-yellow-400/40 text-2xl">⭐</span>
-        <span className="absolute top-[55%] left-[4%] text-purple-200/50 text-4xl">♡</span>
-        <span className="absolute top-[15%] right-[25%] text-pink-200/40 text-xl">✦</span>
+      {/* Background scattered decorations (static, hand-drawn aesthetic) */}
+      <div className="absolute inset-0 pointer-events-none">
+        
+        {/* Dotted flowing paths */}
+        <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M -50 250 Q 300 450, 700 200 T 1500 400"
+            fill="transparent"
+            stroke="#d8b4fe"
+            strokeWidth="1.5"
+            strokeDasharray="6, 10"
+          />
+          <path
+            d="M 100 600 Q 500 700, 900 500 T 1600 650"
+            fill="transparent"
+            stroke="#fbcfe8"
+            strokeWidth="1.5"
+            strokeDasharray="6, 10"
+          />
+        </svg>
+
+        {/* Hand-drawn scattered elements */}
+        {/* Pink heart 1 */}
+        <svg className="absolute top-[12%] left-[8%] w-8 h-8 text-pink-300 opacity-60 -rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+
+        {/* Purple/Pink flower */}
+        <svg className="absolute top-[35%] right-[8%] w-10 h-10 text-pink-300 opacity-70 rotate-12" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="10" fill="#fefce8" stroke="currentColor" strokeWidth="4"/>
+          <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" fill="#fbcfe8" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
+        </svg>
+
+        {/* Purple heart */}
+        <svg className="absolute bottom-[20%] left-[10%] w-6 h-6 text-purple-300 opacity-60 rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+
+        {/* Outline flower */}
+        <svg className="absolute top-[60%] left-[5%] w-7 h-7 text-purple-300 opacity-80 -rotate-12" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="5"/>
+          <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round"/>
+        </svg>
+
+        {/* Small bow */}
+        <div className="absolute top-[20%] right-[30%] w-10 h-10 opacity-60 rotate-[20deg]">
+          <Image src="/assets/bow.png" alt="Bow" fill className="object-contain" />
+        </div>
       </div>
 
       {/* Left Column */}
