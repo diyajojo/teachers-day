@@ -18,6 +18,53 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ── Canvas texture overlay ── */
+.canvas-texture {
+  position: relative;
+}
+.canvas-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='1' fill='%23000' x='0' y='0'/%3E%3Crect width='1' height='1' fill='%23000' x='2' y='2'/%3E%3C/svg%3E");
+  background-size: 4px 4px;
+}
+.canvas-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* ── Wooden frame border effect ── */
+.wooden-frame {
+  border: 12px solid transparent;
+  border-image: linear-gradient(
+    135deg,
+    #c9a66b 0%,
+    #e8d5a8 15%,
+    #b8924a 30%,
+    #d4b87a 45%,
+    #a07838 55%,
+    #c9a66b 70%,
+    #e0c890 85%,
+    #b8924a 100%
+  ) 1;
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Keyframes ── */
 @keyframes float {
   0%   { transform: translateY(0px); }
   50%  { transform: translateY(-10px); }
@@ -49,4 +96,3 @@ body {
 .animate-dash {
   animation: dash 5s linear infinite;
 }
-

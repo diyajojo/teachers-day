@@ -101,17 +101,17 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full min-h-[calc(100vh-8rem)] flex flex-col md:flex-row items-center justify-between overflow-hidden px-8 md:px-12 lg:px-24 py-8 gap-12"
+      className="relative w-full flex-1 flex flex-col md:flex-row items-center justify-between px-8 md:px-12 lg:px-24 py-8 gap-12"
       onMouseEnter={() => setAutoPlay(false)}
     >
       {/* Floating decorations */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <span className="absolute top-[12%] left-[8%] text-pink-300/60 text-3xl animate-float">♡</span>
-        <span className="absolute top-[30%] right-[6%] text-purple-300/50 text-2xl animate-float-delayed">✦</span>
-        <span className="absolute bottom-[18%] left-[10%] text-pink-400/40 text-xl animate-float">✿</span>
-        <span className="absolute bottom-[25%] right-[8%] text-yellow-300/60 text-2xl animate-float-delayed">⭐</span>
-        <span className="absolute top-[55%] left-[4%] text-purple-200/70 text-4xl animate-float">♡</span>
-        <span className="absolute top-[15%] right-[25%] text-pink-200/60 text-xl animate-float-delayed">✦</span>
+        <span className="absolute top-[12%] left-[8%] text-pink-300/50 text-3xl animate-float">♡</span>
+        <span className="absolute top-[30%] right-[6%] text-purple-300/40 text-2xl animate-float-delayed">✦</span>
+        <span className="absolute bottom-[18%] left-[10%] text-pink-400/30 text-xl animate-float">✿</span>
+        <span className="absolute bottom-[25%] right-[8%] text-yellow-400/40 text-2xl animate-float-delayed">⭐</span>
+        <span className="absolute top-[55%] left-[4%] text-purple-200/50 text-4xl animate-float">♡</span>
+        <span className="absolute top-[15%] right-[25%] text-pink-200/40 text-xl animate-float-delayed">✦</span>
       </div>
 
       {/* Left Column */}
@@ -173,7 +173,7 @@ export default function Hero() {
                 }, 500);
               }}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                i === currentPage ? "bg-white scale-125 shadow-sm" : "bg-white/40"
+                i === currentPage ? "bg-[#c084fc] scale-125 shadow-sm" : "bg-[#c084fc]/30"
               }`}
             />
           ))}
