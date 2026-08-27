@@ -123,6 +123,21 @@ export default function Hero() {
             strokeWidth="1.5"
             strokeDasharray="6, 10"
           />
+          {/* New paths for more doodle density */}
+          <path
+            d="M -100 100 Q 200 -50, 600 150 T 1300 50"
+            fill="transparent"
+            stroke="#fbcfe8"
+            strokeWidth="1.5"
+            strokeDasharray="6, 10"
+          />
+          <path
+            d="M 400 800 Q 800 600, 1100 750 T 1800 600"
+            fill="transparent"
+            stroke="#d8b4fe"
+            strokeWidth="1.5"
+            strokeDasharray="6, 10"
+          />
         </svg>
 
         {/* Hand-drawn scattered elements */}
@@ -131,25 +146,67 @@ export default function Hero() {
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
         </svg>
 
-        {/* Purple/Pink flower */}
+        {/* Pink heart 2 (New) */}
+        <svg className="absolute top-[45%] right-[2%] w-6 h-6 text-pink-400 opacity-50 rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+
+        {/* Purple/Pink flower 1 */}
         <svg className="absolute top-[35%] right-[8%] w-10 h-10 text-pink-300 opacity-70 rotate-12" viewBox="0 0 100 100" fill="currentColor">
           <circle cx="50" cy="50" r="10" fill="#fefce8" stroke="currentColor" strokeWidth="4"/>
           <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" fill="#fbcfe8" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
         </svg>
+        
+        {/* Purple/Pink flower 2 (New) */}
+        <svg className="absolute bottom-[10%] left-[25%] w-8 h-8 text-purple-300 opacity-60 -rotate-[25deg]" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="10" fill="#fefce8" stroke="currentColor" strokeWidth="4"/>
+          <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" fill="#e9d5ff" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
+        </svg>
+        
+        {/* Fill the Center Gap */}
+        <svg className="absolute top-[45%] left-[50%] w-6 h-6 text-pink-300 opacity-70 rotate-[15deg]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        
+        <svg className="absolute top-[65%] left-[45%] w-8 h-8 text-purple-300 opacity-50 -rotate-[10deg]" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="5"/>
+          <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round"/>
+        </svg>
 
-        {/* Purple heart */}
+        <div className="absolute top-[55%] left-[55%] w-7 h-7 opacity-50 -rotate-[35deg]">
+          <Image src="/assets/bow.png" alt="Bow" fill className="object-contain" />
+        </div>
+
+        {/* Purple heart 1 */}
         <svg className="absolute bottom-[20%] left-[10%] w-6 h-6 text-purple-300 opacity-60 rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
         </svg>
 
-        {/* Outline flower */}
+        {/* Purple heart 2 (New) */}
+        <svg className="absolute top-[18%] left-[45%] w-5 h-5 text-purple-400 opacity-50 -rotate-[15deg]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+
+        {/* Outline flower 1 */}
         <svg className="absolute top-[60%] left-[5%] w-7 h-7 text-purple-300 opacity-80 -rotate-12" viewBox="0 0 100 100" fill="currentColor">
           <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="5"/>
           <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round"/>
         </svg>
 
-        {/* Small bow */}
+        {/* Outline flower 2 (New) */}
+        <svg className="absolute bottom-[30%] right-[35%] w-9 h-9 text-pink-300 opacity-60 rotate-45" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="5"/>
+          <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round"/>
+        </svg>
+
+        {/* Small bows */}
         <div className="absolute top-[20%] right-[30%] w-10 h-10 opacity-60 rotate-[20deg]">
+          <Image src="/assets/bow.png" alt="Bow" fill className="object-contain" />
+        </div>
+        <div className="absolute bottom-[15%] right-[15%] w-8 h-8 opacity-50 -rotate-[15deg]">
+          <Image src="/assets/bow.png" alt="Bow" fill className="object-contain" />
+        </div>
+        <div className="absolute top-[8%] left-[25%] w-7 h-7 opacity-45 rotate-[45deg]">
           <Image src="/assets/bow.png" alt="Bow" fill className="object-contain" />
         </div>
       </div>
