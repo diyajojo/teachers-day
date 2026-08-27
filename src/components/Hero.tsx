@@ -101,7 +101,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full flex-1 flex flex-col md:flex-row items-center justify-between px-8 md:px-12 lg:px-24 py-8 gap-12"
+      className="relative w-full flex-1 flex flex-col items-center justify-center md:flex-row md:justify-between px-4 md:px-12 lg:px-24 py-8 md:py-8 gap-10 md:gap-12"
       onMouseEnter={() => setAutoPlay(false)}
     >
       {/* Background scattered decorations (static, hand-drawn aesthetic) */}
@@ -211,19 +211,19 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Left Column */}
-      <div className="relative z-10 flex flex-col w-full max-w-md md:max-w-lg shrink-0">
+      {/* Left Column (Sticky Note) - Order 2 on mobile, 1 on desktop */}
+      <div className="relative z-10 flex flex-col w-[85%] max-w-md md:w-full md:max-w-lg shrink-0 order-2 md:order-1 mt-4 md:mt-0">
         {/* Notebook */}
         <div className="relative w-full">
         {/* Spiral binding */}
-        <div className="absolute -top-4 left-10 right-10 flex justify-around z-20 pointer-events-none">
+        <div className="absolute -top-4 left-6 right-6 md:left-10 md:right-10 flex justify-around z-20 pointer-events-none">
           {Array.from({ length: 14 }).map((_, i) => (
             <div key={i} className="w-2.5 h-9 rounded-full bg-gradient-to-b from-[#f3e8ff] via-[#d8b4fe] to-[#a855f7] shadow-[inset_1px_1px_2px_rgba(255,255,255,0.9),0_2px_3px_rgba(0,0,0,0.25)] border border-[#9333ea]/30" />
           ))}
         </div>
 
         {/* Book container */}
-        <div className="relative bg-[#fef7d9] rounded-2xl    overflow-hidden pt-4 min-h-[340px] md:min-h-[400px]">
+        <div className="relative bg-[#fef7d9] rounded-2xl    overflow-hidden pt-4 min-h-[280px] md:min-h-[400px]">
 
           {/* Notebook ruled lines */}
           <div className="absolute inset-0 pt-6 pointer-events-none">
@@ -293,8 +293,8 @@ export default function Hero() {
 
       </div>
 
-      {/* Right Column: Cuddle Pile Image */}
-      <div className="relative z-10 hidden md:flex w-full max-w-lg lg:max-w-2xl justify-center">
+      {/* Right Column: Cuddle Pile Image - Order 1 on mobile, 2 on desktop */}
+      <div className="relative z-10 flex w-[65%] max-w-[280px] md:w-full md:max-w-lg lg:max-w-2xl justify-center mx-auto md:mx-0 order-1 md:order-2 mb-2 md:mb-0">
         <Image src="/assets/hero.png" alt="cuddle pile" width={700} height={600} className="object-contain drop-shadow-xl"/>
       </div>
 

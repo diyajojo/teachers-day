@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="relative w-full flex items-center justify-between px-6 md:px-12 pt-10 pb-4 z-10">
+    <nav className="relative w-full flex items-center justify-between px-4 md:px-12 pt-14 md:pt-10 pb-2 md:pb-4 z-10">
 
       {/* Subtle decorative path across the top */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -20,7 +20,7 @@ export default function Navbar() {
 
       {/* Left: Excel Logo */}
       <div className="relative z-10 flex items-center gap-3 shrink-0">
-        <div className="relative w-20 h-20 md:w-28 md:h-28">
+        <div className="relative w-14 h-14 md:w-28 md:h-28">
           <Image
             src="/assets/excel26.png"
             alt="Excel Logo"
@@ -40,7 +40,7 @@ export default function Navbar() {
         </p>
 
         {/* Teacher's Day */}
-        <h1 className="text-[#5c3d6b] font-serif text-2xl md:text-4xl lg:text-5xl tracking-widest leading-none drop-shadow-sm">
+        <h1 className="text-[#5c3d6b] font-serif text-xl md:text-4xl lg:text-5xl tracking-widest leading-none drop-shadow-sm">
           Teacher&apos;s Day
         </h1>
 
@@ -57,7 +57,7 @@ export default function Navbar() {
 
       {/* Right: Aeroplane decorative element */}
       <div className="relative z-10 flex items-center shrink-0">
-        <div className="relative w-14 h-14 md:w-20 md:h-20 opacity-80">
+        <div className="relative w-10 h-10 md:w-20 md:h-20 opacity-80">
           <Image src="/assets/aeroplane.png" alt="Aeroplane" fill className="object-contain rotate-6" />
         </div>
       </div>
