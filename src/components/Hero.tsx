@@ -126,7 +126,7 @@ export default function Hero() {
         </div>
 
         {/* Book container */}
-        <div className="relative bg-white rounded-2xl shadow-[0_20px_60px_rgba(180,80,180,0.25)] overflow-hidden pt-4 min-h-[340px] md:min-h-[400px]">
+        <div className="relative bg-[#fef7d9] rounded-2xl    overflow-hidden pt-4 min-h-[340px] md:min-h-[400px]">
 
           {/* Notebook ruled lines */}
           <div className="absolute inset-0 pt-6 pointer-events-none">

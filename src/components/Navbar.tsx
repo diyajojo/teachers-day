@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="relative z-10 flex items-center gap-3">
         <div className="relative w-24 h-24 md:w-32 md:h-32">
           <Image
-            src="/assets/logo.png"
+            src="/assets/excel26.png"
             alt="Excel Logo"
             fill
             className="object-contain"
