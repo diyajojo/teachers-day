@@ -276,27 +276,11 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Navigation arrows */}
-        <div className="flex justify-between mt-3 px-2">
-          <button
-            onClick={() => { setAutoPlay(false); goToPage("prev"); }}
-            className="text-pink-500 hover:text-pink-700 transition-colors px-3 group"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-1 transition-transform">
-              <path d="M19 12H5M5 12L12 19M5 12L12 5" />
-            </svg>
-          </button>
+        {/* Page counter text */}
+        <div className="flex justify-center mt-3 px-2">
           <p className="text-[#5c3d6b]/60 text-xs self-center italic font-semibold">
             {currentPage + 1} / {pages.length}
           </p>
-          <button
-            onClick={() => { setAutoPlay(false); goToPage("next"); }}
-            className="text-pink-500 hover:text-pink-700 transition-colors px-3 group"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
-              <path d="M5 12h14M19 12l-7 7M19 12l-7-7" />
-            </svg>
-          </button>
         </div>
       </div>
 
