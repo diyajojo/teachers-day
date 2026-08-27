@@ -35,7 +35,7 @@ export default function Home() {
 
       {/* The canvas — rotated slightly to look casually pinned */}
       <div
-        className="canvas-texture bg-[#faf6f0] w-[94vw] h-[92vh] flex flex-col relative shadow-[0_25px_80px_rgba(0,0,0,0.6)]"
+        className="canvas-texture bg-[#faf6f0] w-[94vw] h-[92vh] rounded-2xl flex flex-col relative shadow-[0_25px_80px_rgba(0,0,0,0.6)]"
         style={{ transform: "rotate(-1.5deg)" }}
       >
         <Navbar />
