@@ -106,12 +106,12 @@ export default function Hero() {
     >
       {/* Floating decorations */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <span className="absolute top-[12%] left-[8%] text-pink-300/50 text-3xl animate-float">♡</span>
-        <span className="absolute top-[30%] right-[6%] text-purple-300/40 text-2xl animate-float-delayed">✦</span>
-        <span className="absolute bottom-[18%] left-[10%] text-pink-400/30 text-xl animate-float">✿</span>
-        <span className="absolute bottom-[25%] right-[8%] text-yellow-400/40 text-2xl animate-float-delayed">⭐</span>
-        <span className="absolute top-[55%] left-[4%] text-purple-200/50 text-4xl animate-float">♡</span>
-        <span className="absolute top-[15%] right-[25%] text-pink-200/40 text-xl animate-float-delayed">✦</span>
+        <span className="absolute top-[12%] left-[8%] text-pink-300/50 text-3xl">♡</span>
+        <span className="absolute top-[30%] right-[6%] text-purple-300/40 text-2xl">✦</span>
+        <span className="absolute bottom-[18%] left-[10%] text-pink-400/30 text-xl">✿</span>
+        <span className="absolute bottom-[25%] right-[8%] text-yellow-400/40 text-2xl">⭐</span>
+        <span className="absolute top-[55%] left-[4%] text-purple-200/50 text-4xl">♡</span>
+        <span className="absolute top-[15%] right-[25%] text-pink-200/40 text-xl">✦</span>
       </div>
 
       {/* Left Column */}
@@ -206,7 +206,7 @@ export default function Hero() {
       </div>
 
       {/* Right Column: Cuddle Pile Image */}
-      <div className="relative z-10 hidden md:flex w-full max-w-lg lg:max-w-2xl justify-center animate-float">
+      <div className="relative z-10 hidden md:flex w-full max-w-lg lg:max-w-2xl justify-center">
         <Image src="/assets/hero.png" alt="cuddle pile" width={700} height={600} className="object-contain drop-shadow-xl"/>
       </div>
 
