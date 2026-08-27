@@ -17,3 +17,36 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes flipOut {
+  0%   { opacity: 1; transform: perspective(800px) rotateY(0deg); }
+  100% { opacity: 0; transform: perspective(800px) rotateY(-40deg); }
+}
+
+@keyframes flipIn {
+  0%   { opacity: 0; transform: perspective(800px) rotateY(40deg); }
+  100% { opacity: 1; transform: perspective(800px) rotateY(0deg); }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -100; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 5s ease-in-out 1.5s infinite;
+}
+
+.animate-dash {
+  animation: dash 5s linear infinite;
+}
+
