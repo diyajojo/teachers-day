@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="relative w-full h-32 bg-gradient-to-r from-pink-300 via-pink-200 to-pink-300 overflow-hidden flex items-center justify-between px-6 md:px-16 shadow-md">
+    <nav className="relative w-full h-32 bg-transparent overflow-hidden flex items-center justify-between px-6 md:px-16">
       {/* Background Dotted Paths & Hearts */}
       <div className="absolute inset-0 pointer-events-none opacity-60">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
