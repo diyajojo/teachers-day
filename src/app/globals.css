@@ -25,13 +25,13 @@ body {
 }
 
 @keyframes flipOut {
-  0%   { opacity: 1; transform: perspective(800px) rotateY(0deg); }
-  100% { opacity: 0; transform: perspective(800px) rotateY(-40deg); }
+  0%   { opacity: 1; transform-origin: top; transform: perspective(800px) rotateX(0deg); }
+  100% { opacity: 0; transform-origin: top; transform: perspective(800px) rotateX(90deg); }
 }
 
 @keyframes flipIn {
-  0%   { opacity: 0; transform: perspective(800px) rotateY(40deg); }
-  100% { opacity: 1; transform: perspective(800px) rotateY(0deg); }
+  0%   { opacity: 0; transform-origin: top; transform: perspective(800px) rotateX(-90deg); }
+  100% { opacity: 1; transform-origin: top; transform: perspective(800px) rotateX(0deg); }
 }
 
 @keyframes dash {

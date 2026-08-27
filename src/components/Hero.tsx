@@ -119,9 +119,9 @@ export default function Hero() {
         {/* Notebook */}
         <div className="relative w-full">
         {/* Spiral binding */}
-        <div className="absolute -top-3 left-12 right-12 flex justify-around z-20 pointer-events-none">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <div key={i} className="w-5 h-5 rounded-full border-[3px] border-[#c084fc] bg-white shadow-sm" />
+        <div className="absolute -top-4 left-10 right-10 flex justify-around z-20 pointer-events-none">
+          {Array.from({ length: 14 }).map((_, i) => (
+            <div key={i} className="w-2.5 h-9 rounded-full bg-gradient-to-b from-[#f3e8ff] via-[#d8b4fe] to-[#a855f7] shadow-[inset_1px_1px_2px_rgba(255,255,255,0.9),0_2px_3px_rgba(0,0,0,0.25)] border border-[#9333ea]/30" />
           ))}
         </div>
 
@@ -207,7 +207,7 @@ export default function Hero() {
 
       {/* Right Column: Cuddle Pile Image */}
       <div className="relative z-10 hidden md:flex w-full max-w-lg lg:max-w-2xl justify-center animate-float">
-        <Image src="/assets/animals.png" alt="cuddle pile" width={700} height={600} className="object-contain drop-shadow-xl"/>
+        <Image src="/assets/hero.png" alt="cuddle pile" width={700} height={600} className="object-contain drop-shadow-xl"/>
       </div>
 
     </section>
