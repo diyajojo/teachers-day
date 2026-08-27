@@ -79,8 +79,9 @@ export default function Hero() {
 
   const goToPage = (dir: "next" | "prev") => {
     if (flipping) return;
-    const next = dir === "next" ? currentPage + 1 : currentPage - 1;
-    if (next < 0 || next >= pages.length) return;
+    let next = dir === "next" ? currentPage + 1 : currentPage - 1;
+    if (next >= pages.length) next = 0;
+    if (next < 0) next = pages.length - 1;
     setFlipDirection(dir);
     setFlipping(true);
     setTimeout(() => {
@@ -93,20 +94,14 @@ export default function Hero() {
   useEffect(() => {
     if (!autoPlay) return;
     const interval = setInterval(() => {
-      if (currentPage < pages.length - 1) {
-        goToPage("next");
-      } else {
-        setCurrentPage(0);
-        setDisplayedPage(0);
-        setAutoPlay(false);
-      }
-    }, 3500);
+      goToPage("next");
+    }, 5000);
     return () => clearInterval(interval);
   }, [currentPage, autoPlay, flipping]);
 
   return (
     <section
-      className="relative w-full min-h-[calc(100vh-8rem)] flex flex-col items-start justify-center overflow-hidden px-8 md:px-24 py-8"
+      className="relative w-full min-h-[calc(100vh-8rem)] flex flex-col md:flex-row items-center justify-between overflow-hidden px-8 md:px-12 lg:px-24 py-8 gap-12"
       onMouseEnter={() => setAutoPlay(false)}
     >
       {/* Floating decorations */}
@@ -119,8 +114,10 @@ export default function Hero() {
         <span className="absolute top-[15%] right-[25%] text-pink-200/60 text-xl animate-float-delayed">✦</span>
       </div>
 
-      {/* Notebook */}
-      <div className="relative z-10 w-full max-w-md md:max-w-lg">
+      {/* Left Column */}
+      <div className="relative z-10 flex flex-col w-full max-w-md md:max-w-lg shrink-0">
+        {/* Notebook */}
+        <div className="relative w-full">
         {/* Spiral binding */}
         <div className="absolute -top-3 left-12 right-12 flex justify-around z-20 pointer-events-none">
           {Array.from({ length: 10 }).map((_, i) => (
@@ -186,32 +183,31 @@ export default function Hero() {
         <div className="flex justify-between mt-3 px-2">
           <button
             onClick={() => { setAutoPlay(false); goToPage("prev"); }}
-            disabled={currentPage === 0}
-            className="text-white/60 hover:text-white text-xl transition-all disabled:opacity-20 disabled:cursor-not-allowed px-3"
+            className="text-pink-500 hover:text-pink-700 transition-colors px-3 group"
           >
-            ←
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-1 transition-transform">
+              <path d="M19 12H5M5 12L12 19M5 12L12 5" />
+            </svg>
           </button>
-          <p className="text-white/60 text-xs self-center italic">
+          <p className="text-[#5c3d6b]/60 text-xs self-center italic font-semibold">
             {currentPage + 1} / {pages.length}
           </p>
           <button
             onClick={() => { setAutoPlay(false); goToPage("next"); }}
-            disabled={currentPage === pages.length - 1}
-            className="text-white/60 hover:text-white text-xl transition-all disabled:opacity-20 disabled:cursor-not-allowed px-3"
+            className="text-pink-500 hover:text-pink-700 transition-colors px-3 group"
           >
-            →
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+              <path d="M5 12h14M19 12l-7 7M19 12l-7-7" />
+            </svg>
           </button>
         </div>
       </div>
 
-      {/* Cat & Dog peeking at the bottom */}
-      <div className="relative z-10 flex justify-between w-full max-w-sm mt-6 px-4">
-        <div className="w-14 h-14 relative animate-float-delayed">
-          <Image src="/assets/cat.png" alt="cat" fill className="object-contain" />
-        </div>
-        <div className="w-14 h-14 relative animate-float">
-          <Image src="/assets/dog.png" alt="dog" fill className="object-contain" />
-        </div>
+      </div>
+
+      {/* Right Column: Cuddle Pile Image */}
+      <div className="relative z-10 hidden md:flex w-full max-w-lg lg:max-w-2xl justify-center animate-float">
+        <Image src="/assets/animals.png" alt="cuddle pile" width={700} height={600} className="object-contain drop-shadow-xl"/>
       </div>
 
     </section>
