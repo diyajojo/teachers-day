@@ -255,11 +255,13 @@ export default function Hero() {
         </div>
 
         {/* Page indicator dots */}
-        <div className="flex justify-center gap-2 mt-4">
+        <div className="flex justify-center gap-4 mt-4">
           {pages.map((_, i) => (
             <button
               key={i}
               onClick={() => {
+                setAutoPlay(false);
+                if (i === currentPage || flipping) return;
                 const dir = i > currentPage ? "next" : "prev";
                 setFlipDirection(dir);
                 setFlipping(true);
@@ -269,10 +271,15 @@ export default function Hero() {
                   setFlipping(false);
                 }, 500);
               }}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                i === currentPage ? "bg-[#c084fc] scale-125 shadow-sm" : "bg-[#c084fc]/30"
-              }`}
-            />
+              className="p-3 -m-3 touch-manipulation"
+              aria-label={`Go to page ${i + 1}`}
+            >
+              <div
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  i === currentPage ? "bg-[#c084fc] scale-150 shadow-sm" : "bg-[#c084fc]/40"
+                }`}
+              />
+            </button>
           ))}
         </div>
 
