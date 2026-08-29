@@ -214,7 +214,7 @@ export default function Hero() {
       {/* Left Column (Sticky Note) - Order 2 on mobile, 1 on desktop */}
       <div className="relative z-10 flex flex-col w-[85%] max-w-md md:w-full md:max-w-lg min-h-0 order-2 md:order-1 mt-4 md:mt-0">
         {/* Notebook */}
-        <div className="relative w-full">
+        <div className="relative w-full flex-1 min-h-0 flex flex-col">
         {/* Spiral binding */}
         <div className="absolute -top-4 left-6 right-6 md:left-10 md:right-10 flex justify-around z-20 pointer-events-none">
           {Array.from({ length: 14 }).map((_, i) => (
@@ -223,7 +223,7 @@ export default function Hero() {
         </div>
 
         {/* Book container */}
-        <div className="relative bg-[#fef7d9] rounded-2xl    overflow-hidden pt-4 min-h-[280px] md:min-h-[400px]">
+        <div className="relative bg-[#fef7d9] rounded-2xl overflow-hidden pt-4 flex-1 min-h-0 flex flex-col">
 
           {/* Notebook ruled lines */}
           <div className="absolute inset-0 pt-6 pointer-events-none">
@@ -237,7 +237,7 @@ export default function Hero() {
           {/* Page content with flip animation */}
           <div
             key={displayedPage}
-            className={`relative z-10 ${
+            className={`relative z-10 flex-1 min-h-0 overflow-y-auto ${
               flipping
                 ? flipDirection === "next"
                   ? "animate-[flipOut_0.5s_ease_forwards]"
