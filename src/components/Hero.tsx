@@ -40,38 +40,9 @@ const pages = [
 ];
 
 export default function Hero() {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [flipping, setFlipping] = useState(false);
-  const [flipDirection, setFlipDirection] = useState<"next" | "prev">("next");
-  const [displayedPage, setDisplayedPage] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
-
-  const goToPage = (dir: "next" | "prev") => {
-    if (flipping) return;
-    let next = dir === "next" ? currentPage + 1 : currentPage - 1;
-    if (next >= pages.length) next = 0;
-    if (next < 0) next = pages.length - 1;
-    setFlipDirection(dir);
-    setFlipping(true);
-    setTimeout(() => {
-      setCurrentPage(next);
-      setDisplayedPage(next);
-      setFlipping(false);
-    }, 500);
-  };
-
-  useEffect(() => {
-    if (!autoPlay) return;
-    const interval = setInterval(() => {
-      goToPage("next");
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currentPage, autoPlay, flipping]);
-
   return (
     <section
       className="relative w-full flex-1 min-h-0 flex flex-col items-center justify-center md:flex-row md:justify-between px-4 md:px-12 lg:px-24 py-4 md:py-8 gap-4 md:gap-12"
-      onMouseEnter={() => setAutoPlay(false)}
     >
       {/* Background scattered decorations (static, hand-drawn aesthetic) */}
       <div className="absolute inset-0 pointer-events-none">
@@ -203,23 +174,9 @@ export default function Hero() {
             <div className="absolute top-0 left-14 h-full border-l-2 border-pink-200/50" />
           </div>
 
-          {/* Page content with flip animation */}
-          <div
-            key={displayedPage}
-            className={`relative z-10 flex-1 min-h-0 overflow-y-auto ${
-              flipping
-                ? flipDirection === "next"
-                  ? "animate-[flipOut_0.5s_ease_forwards]"
-                  : "animate-[flipIn_0.5s_ease_forwards]"
-                : ""
-            }`}
-            style={{
-              animation: flipping
-                ? `${flipDirection === "next" ? "flipOut" : "flipIn"} 0.5s ease forwards`
-                : undefined,
-            }}
-          >
-            {pages[displayedPage].content}
+          {/* Page content */}
+          <div className="relative z-10 flex-1 min-h-0 overflow-y-auto">
+            {pages[0].content}
           </div>
         </div>
 
