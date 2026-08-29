@@ -7,25 +7,6 @@ const pages = [
     id: 0,
     content: (
       <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#5c3d6b] leading-snug mb-4">
-          Dear Teachers,
-        </h2>
-        <p className="text-gray-700 text-sm md:text-base leading-snug">
-          Maybe we didn’t say it enough, but we noticed and we remember. For every extra explanation, minute and chance, thank you. Between attendance calls and last-minute doubts, you became part of the college memories we’ll miss the most.
-        </p>
-        <div className="mt-auto flex items-end justify-between">
-          <p className="text-xs text-gray-400 italic">— written with love, by your students</p>
-          <div className="w-12 h-12 relative opacity-80">
-            <Image src="/assets/cat.png" alt="cat sticker" fill className="object-contain" />
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 1,
-    content: (
-      <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none">
         <p className="text-purple-400 text-xs md:text-sm tracking-widest uppercase mb-2 font-sans font-semibold">
           A note from the other side
         </p>
@@ -44,8 +25,13 @@ const pages = [
 
         <div className="mt-auto flex items-end justify-between gap-3 pt-4">
           <div />
-          <div className="w-10 h-10 relative">
-            <Image src="/assets/dog.png" alt="dog sticker" fill className="object-contain" />
+          <div className="flex gap-2">
+            <div className="w-10 h-10 relative">
+              <Image src="/assets/cat.png" alt="cat sticker" fill className="object-contain" />
+            </div>
+            <div className="w-10 h-10 relative">
+              <Image src="/assets/dog.png" alt="dog sticker" fill className="object-contain" />
+            </div>
           </div>
         </div>
       </div>
@@ -238,40 +224,44 @@ export default function Hero() {
         </div>
 
         {/* Page indicator dots */}
-        <div className="flex justify-center gap-4 mt-4">
-          {pages.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setAutoPlay(false);
-                if (i === currentPage || flipping) return;
-                const dir = i > currentPage ? "next" : "prev";
-                setFlipDirection(dir);
-                setFlipping(true);
-                setTimeout(() => {
-                  setCurrentPage(i);
-                  setDisplayedPage(i);
-                  setFlipping(false);
-                }, 500);
-              }}
-              className="p-3 -m-3 touch-manipulation"
-              aria-label={`Go to page ${i + 1}`}
-            >
-              <div
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  i === currentPage ? "bg-[#c084fc] scale-150 shadow-sm" : "bg-[#c084fc]/40"
-                }`}
-              />
-            </button>
-          ))}
-        </div>
+        {pages.length > 1 && (
+          <div className="flex justify-center gap-4 mt-4">
+            {pages.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  setAutoPlay(false);
+                  if (i === currentPage || flipping) return;
+                  const dir = i > currentPage ? "next" : "prev";
+                  setFlipDirection(dir);
+                  setFlipping(true);
+                  setTimeout(() => {
+                    setCurrentPage(i);
+                    setDisplayedPage(i);
+                    setFlipping(false);
+                  }, 500);
+                }}
+                className="p-3 -m-3 touch-manipulation"
+                aria-label={`Go to page ${i + 1}`}
+              >
+                <div
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    i === currentPage ? "bg-[#c084fc] scale-150 shadow-sm" : "bg-[#c084fc]/40"
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Page counter text */}
-        <div className="flex justify-center mt-3 px-2">
-          <p className="text-[#5c3d6b]/60 text-xs self-center italic font-semibold">
-            {currentPage + 1} / {pages.length}
-          </p>
-        </div>
+        {pages.length > 1 && (
+          <div className="flex justify-center mt-3 px-2">
+            <p className="text-[#5c3d6b]/60 text-xs self-center italic font-semibold">
+              {currentPage + 1} / {pages.length}
+            </p>
+          </div>
+        )}
       </div>
 
       </div>
