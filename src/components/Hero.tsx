@@ -101,7 +101,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full flex-1 flex flex-col items-center justify-center md:flex-row md:justify-between px-4 md:px-12 lg:px-24 py-8 md:py-8 gap-10 md:gap-12"
+      className="relative w-full flex-1 min-h-0 flex flex-col items-center justify-center md:flex-row md:justify-between px-4 md:px-12 lg:px-24 py-4 md:py-8 gap-4 md:gap-12"
       onMouseEnter={() => setAutoPlay(false)}
     >
       {/* Background scattered decorations (static, hand-drawn aesthetic) */}
@@ -212,7 +212,7 @@ export default function Hero() {
       </div>
 
       {/* Left Column (Sticky Note) - Order 2 on mobile, 1 on desktop */}
-      <div className="relative z-10 flex flex-col w-[85%] max-w-md md:w-full md:max-w-lg shrink-0 order-2 md:order-1 mt-4 md:mt-0">
+      <div className="relative z-10 flex flex-col w-[85%] max-w-md md:w-full md:max-w-lg min-h-0 order-2 md:order-1 mt-4 md:mt-0">
         {/* Notebook */}
         <div className="relative w-full">
         {/* Spiral binding */}
