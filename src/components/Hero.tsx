@@ -11,7 +11,7 @@ const pages = [
           A note from the other side
         </p>
         <p className="text-gray-700 text-sm md:text-base leading-snug mb-4">
-          Before you scroll away, here’s something we saved for you. Some things were never said, so here are words from students who always meant them. ❤️
+          Some things were left unsaid in the classroom, but we noticed and we remember. Here are a few honest, heartfelt words from the students who always meant them. ❤️
         </p>
         
         <div className="flex justify-center mt-2">
