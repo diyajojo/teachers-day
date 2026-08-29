@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
 const pages = [
   {
@@ -180,45 +179,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Page indicator dots */}
-        {pages.length > 1 && (
-          <div className="flex justify-center gap-4 mt-4">
-            {pages.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => {
-                  setAutoPlay(false);
-                  if (i === currentPage || flipping) return;
-                  const dir = i > currentPage ? "next" : "prev";
-                  setFlipDirection(dir);
-                  setFlipping(true);
-                  setTimeout(() => {
-                    setCurrentPage(i);
-                    setDisplayedPage(i);
-                    setFlipping(false);
-                  }, 500);
-                }}
-                className="p-3 -m-3 touch-manipulation"
-                aria-label={`Go to page ${i + 1}`}
-              >
-                <div
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    i === currentPage ? "bg-[#c084fc] scale-150 shadow-sm" : "bg-[#c084fc]/40"
-                  }`}
-                />
-              </button>
-            ))}
-          </div>
-        )}
 
-        {/* Page counter text */}
-        {pages.length > 1 && (
-          <div className="flex justify-center mt-3 px-2">
-            <p className="text-[#5c3d6b]/60 text-xs self-center italic font-semibold">
-              {currentPage + 1} / {pages.length}
-            </p>
-          </div>
-        )}
       </div>
 
       </div>
