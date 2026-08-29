@@ -7,12 +7,11 @@ const pages = [
     id: 0,
     content: (
       <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none">
-        <p className="text-pink-400 text-sm tracking-widest uppercase mb-4 font-sans">September 5, 2026</p>
         <h2 className="text-3xl md:text-4xl font-bold text-[#5c3d6b] leading-snug mb-4">
-          Dear Teacher,
+          Dear Teachers,
         </h2>
-        <p className="text-gray-600 text-base md:text-lg leading-relaxed italic">
-          "Some lessons you taught us never left the room. They followed us home, kept us up at night, and showed up again on the days we needed them most."
+        <p className="text-gray-700 text-sm md:text-base leading-snug">
+          Maybe we didn’t say it enough, but we noticed and we remember. For every extra explanation, minute and chance, thank you. Between attendance calls and last-minute doubts, you became part of the college memories we’ll miss the most.
         </p>
         <div className="mt-auto flex items-end justify-between">
           <p className="text-xs text-gray-400 italic">— written with love, by your students</p>
@@ -27,44 +26,28 @@ const pages = [
     id: 1,
     content: (
       <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none">
-        <p className="text-purple-400 text-sm tracking-widest uppercase mb-4 font-sans">A note from us</p>
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
-          Every year, seniors from our college write down their most honest, heartfelt thoughts — a memory, a laugh, a lesson, a thank you.
+        <p className="text-purple-400 text-xs md:text-sm tracking-widest uppercase mb-2 font-sans font-semibold">
+          A note from the other side
         </p>
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-          These are those notes. Unfiltered. Real. Full of love. 💛
+        <p className="text-gray-700 text-sm md:text-base leading-snug mb-4">
+          Before you scroll away, here’s something we saved for you. Some things were never said, so here are words from students who always meant them. ❤️
         </p>
-        <div className="mt-auto flex items-end justify-between gap-3">
-          <p className="text-xs text-gray-400 italic">Keep flipping →</p>
-          <div className="flex gap-2">
-            <div className="w-10 h-10 relative">
-              <Image src="/assets/dog.png" alt="dog sticker" fill className="object-contain" />
-            </div>
+        
+        <div className="flex justify-center mt-2">
+          <button
+            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+            className="bg-[#e879a0] hover:bg-[#d63384] text-white font-semibold text-sm px-7 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+          >
+            Read the notes ✨
+          </button>
+        </div>
+
+        <div className="mt-auto flex items-end justify-between gap-3 pt-4">
+          <div />
+          <div className="w-10 h-10 relative">
+            <Image src="/assets/dog.png" alt="dog sticker" fill className="object-contain" />
           </div>
         </div>
-      </div>
-    ),
-  },
-  {
-    id: 2,
-    content: (
-      <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none items-center justify-center text-center gap-6">
-        <div className="flex gap-3 items-center justify-center">
-          <div className="w-10 h-10 relative"><Image src="/assets/cat.png" alt="cat" fill className="object-contain" /></div>
-          <div className="w-10 h-10 relative"><Image src="/assets/dog.png" alt="dog" fill className="object-contain" /></div>
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-[#5c3d6b] leading-snug">
-          50+ notes.<br />Infinite gratitude.
-        </h2>
-        <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-xs">
-          Scroll down to read what your seniors wrote for the teachers who made their college life unforgettable.
-        </p>
-        <button
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-          className="mt-2 bg-[#e879a0] hover:bg-[#d63384] text-white font-semibold text-sm px-7 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-        >
-          Read the notes ✨
-        </button>
       </div>
     ),
   },
