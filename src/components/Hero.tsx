@@ -1,42 +1,44 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
 const pages = [
   {
     id: 0,
     content: (
       <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none">
-        <p className="text-pink-400 text-sm tracking-widest uppercase mb-4 font-sans">September 5, 2026</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#5c3d6b] leading-snug mb-4">
-          Dear Teacher,
-        </h2>
-        <p className="text-gray-600 text-base md:text-lg leading-relaxed italic">
-          "Some lessons you taught us never left the room. They followed us home, kept us up at night, and showed up again on the days we needed them most."
+        <p className="text-purple-400 text-xs md:text-sm tracking-widest uppercase mb-2 font-sans font-semibold">
+          A note from the other side
         </p>
-        <div className="mt-auto flex items-end justify-between">
-          <p className="text-xs text-gray-400 italic">— written with love, by your students</p>
-          <div className="w-12 h-12 relative opacity-80">
-            <Image src="/assets/cat.png" alt="cat sticker" fill className="object-contain" />
+        <p className="text-gray-700 text-sm md:text-base leading-snug mb-4">
+          Some things were left unsaid in the classroom, but we noticed and we remember. Here are a few honest, heartfelt words from the students who always meant them. ❤️
+        </p>
+        
+        <div className="flex justify-center mt-4 mb-2 relative">
+          <div className="relative group cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}>
+            {/* Washi tape effect */}
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-pink-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.1)] rotate-[-4deg] z-20 opacity-90 transition-transform duration-300 group-hover:rotate-[-2deg]"></div>
+            
+            <button
+              className="relative overflow-hidden bg-white px-8 py-3 shadow-[2px_3px_5px_rgba(0,0,0,0.15)] hover:shadow-[4px_6px_10px_rgba(0,0,0,0.2)] transition-all duration-300 group-hover:-translate-y-1 border border-gray-200 rounded-sm transform rotate-2 group-hover:rotate-0"
+            >
+              {/* Notebook lines on button */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="w-full h-[14px] border-b border-blue-200"></div>
+                <div className="w-full h-[14px] border-b border-blue-200"></div>
+              </div>
+              <span className="relative z-10 font-[Georgia,serif] text-base italic font-semibold tracking-wide text-gray-700 ml-2 group-hover:text-pink-600 transition-colors">
+                Read the notes 
+              </span>
+            </button>
           </div>
         </div>
-      </div>
-    ),
-  },
-  {
-    id: 1,
-    content: (
-      <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none">
-        <p className="text-purple-400 text-sm tracking-widest uppercase mb-4 font-sans">A note from us</p>
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
-          Every year, seniors from our college write down their most honest, heartfelt thoughts — a memory, a laugh, a lesson, a thank you.
-        </p>
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-          These are those notes. Unfiltered. Real. Full of love. 💛
-        </p>
-        <div className="mt-auto flex items-end justify-between gap-3">
-          <p className="text-xs text-gray-400 italic">Keep flipping →</p>
+
+        <div className="mt-auto flex items-end justify-between gap-3 pt-4">
+          <div />
           <div className="flex gap-2">
+            <div className="w-10 h-10 relative">
+              <Image src="/assets/cat.png" alt="cat sticker" fill className="object-contain" />
+            </div>
             <div className="w-10 h-10 relative">
               <Image src="/assets/dog.png" alt="dog sticker" fill className="object-contain" />
             </div>
@@ -45,64 +47,12 @@ const pages = [
       </div>
     ),
   },
-  {
-    id: 2,
-    content: (
-      <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none items-center justify-center text-center gap-6">
-        <div className="flex gap-3 items-center justify-center">
-          <div className="w-10 h-10 relative"><Image src="/assets/cat.png" alt="cat" fill className="object-contain" /></div>
-          <div className="w-10 h-10 relative"><Image src="/assets/dog.png" alt="dog" fill className="object-contain" /></div>
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-[#5c3d6b] leading-snug">
-          50+ notes.<br />Infinite gratitude.
-        </h2>
-        <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-xs">
-          Scroll down to read what your seniors wrote for the teachers who made their college life unforgettable.
-        </p>
-        <button
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-          className="mt-2 bg-[#e879a0] hover:bg-[#d63384] text-white font-semibold text-sm px-7 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-        >
-          Read the notes ✨
-        </button>
-      </div>
-    ),
-  },
 ];
 
 export default function Hero() {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [flipping, setFlipping] = useState(false);
-  const [flipDirection, setFlipDirection] = useState<"next" | "prev">("next");
-  const [displayedPage, setDisplayedPage] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
-
-  const goToPage = (dir: "next" | "prev") => {
-    if (flipping) return;
-    let next = dir === "next" ? currentPage + 1 : currentPage - 1;
-    if (next >= pages.length) next = 0;
-    if (next < 0) next = pages.length - 1;
-    setFlipDirection(dir);
-    setFlipping(true);
-    setTimeout(() => {
-      setCurrentPage(next);
-      setDisplayedPage(next);
-      setFlipping(false);
-    }, 500);
-  };
-
-  useEffect(() => {
-    if (!autoPlay) return;
-    const interval = setInterval(() => {
-      goToPage("next");
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currentPage, autoPlay, flipping]);
-
   return (
     <section
-      className="relative w-full flex-1 flex flex-col items-center justify-center md:flex-row md:justify-between px-4 md:px-12 lg:px-24 py-8 md:py-8 gap-10 md:gap-12"
-      onMouseEnter={() => setAutoPlay(false)}
+      className="relative w-full flex-1 min-h-0 flex flex-col items-center justify-center md:flex-row md:justify-between px-4 md:px-12 lg:px-24 py-4 md:py-8 gap-4 md:gap-12"
     >
       {/* Background scattered decorations (static, hand-drawn aesthetic) */}
       <div className="absolute inset-0 pointer-events-none">
@@ -212,9 +162,9 @@ export default function Hero() {
       </div>
 
       {/* Left Column (Sticky Note) - Order 2 on mobile, 1 on desktop */}
-      <div className="relative z-10 flex flex-col w-[85%] max-w-md md:w-full md:max-w-lg shrink-0 order-2 md:order-1 mt-4 md:mt-0">
+      <div className="relative z-10 flex flex-col w-[85%] max-w-md md:w-full md:max-w-lg min-h-0 order-2 md:order-1 mt-4 md:mt-0">
         {/* Notebook */}
-        <div className="relative w-full">
+        <div className="relative w-full flex-1 min-h-0 flex flex-col">
         {/* Spiral binding */}
         <div className="absolute -top-4 left-6 right-6 md:left-10 md:right-10 flex justify-around z-20 pointer-events-none">
           {Array.from({ length: 14 }).map((_, i) => (
@@ -223,72 +173,22 @@ export default function Hero() {
         </div>
 
         {/* Book container */}
-        <div className="relative bg-[#fef7d9] rounded-2xl    overflow-hidden pt-4 min-h-[280px] md:min-h-[400px]">
+        <div className="relative bg-[#fef7d9] rounded-2xl overflow-hidden pt-4 flex-1 min-h-0 flex flex-col">
 
           {/* Notebook ruled lines */}
           <div className="absolute inset-0 pt-6 pointer-events-none">
             {Array.from({ length: 14 }).map((_, i) => (
               <div key={i} className="w-full border-b border-blue-100/60" style={{ height: "28px" }} />
             ))}
-            {/* Left margin line */}
-            <div className="absolute top-0 left-14 h-full border-l-2 border-pink-200/50" />
           </div>
 
-          {/* Page content with flip animation */}
-          <div
-            key={displayedPage}
-            className={`relative z-10 ${
-              flipping
-                ? flipDirection === "next"
-                  ? "animate-[flipOut_0.5s_ease_forwards]"
-                  : "animate-[flipIn_0.5s_ease_forwards]"
-                : ""
-            }`}
-            style={{
-              animation: flipping
-                ? `${flipDirection === "next" ? "flipOut" : "flipIn"} 0.5s ease forwards`
-                : undefined,
-            }}
-          >
-            {pages[displayedPage].content}
+          {/* Page content */}
+          <div className="relative z-10 flex-1 min-h-0 overflow-y-auto">
+            {pages[0].content}
           </div>
         </div>
 
-        {/* Page indicator dots */}
-        <div className="flex justify-center gap-4 mt-4">
-          {pages.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setAutoPlay(false);
-                if (i === currentPage || flipping) return;
-                const dir = i > currentPage ? "next" : "prev";
-                setFlipDirection(dir);
-                setFlipping(true);
-                setTimeout(() => {
-                  setCurrentPage(i);
-                  setDisplayedPage(i);
-                  setFlipping(false);
-                }, 500);
-              }}
-              className="p-3 -m-3 touch-manipulation"
-              aria-label={`Go to page ${i + 1}`}
-            >
-              <div
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  i === currentPage ? "bg-[#c084fc] scale-150 shadow-sm" : "bg-[#c084fc]/40"
-                }`}
-              />
-            </button>
-          ))}
-        </div>
 
-        {/* Page counter text */}
-        <div className="flex justify-center mt-3 px-2">
-          <p className="text-[#5c3d6b]/60 text-xs self-center italic font-semibold">
-            {currentPage + 1} / {pages.length}
-          </p>
-        </div>
       </div>
 
       </div>

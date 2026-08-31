@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#2e1f14] overflow-hidden flex items-center justify-center relative p-2 md:p-0">
+    <div className="h-[100dvh] bg-[#2e1f14] overflow-hidden flex items-center justify-center relative p-2 md:p-0">
 
       {/* Paper clip — pinned at the top, slightly offset to match the tilt */}
       <div className="absolute top-[3vh] md:top-[2.5vh] left-[49%] z-50 pointer-events-none -rotate-[1.5deg]">
@@ -35,7 +35,7 @@ export default function Home() {
 
       {/* The canvas — rotated slightly to look casually pinned */}
       <div
-        className="canvas-texture bg-[#faf6f0] w-[90vw] h-[90vh] md:w-[94vw] md:h-[92vh] rounded-xl md:rounded-2xl flex flex-col relative shadow-[0_15px_40px_rgba(0,0,0,0.5)] md:shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-y-auto overflow-x-hidden"
+        className="canvas-texture bg-[#faf6f0] w-[90vw] h-[90dvh] md:w-[94vw] md:h-[92dvh] rounded-xl md:rounded-2xl flex flex-col justify-evenly relative shadow-[0_15px_40px_rgba(0,0,0,0.5)] md:shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-hidden"
         style={{ transform: "rotate(-1.5deg)" }}
       >
         <Navbar />
