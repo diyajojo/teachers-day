@@ -86,6 +86,14 @@ export default function NotesSection({ onBack }: { onBack: () => void }) {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+      {/* ── Top Unruled Section Title ── */}
+      <div className="absolute top-[3%] w-full px-2 z-20 pointer-events-none select-none flex justify-center items-center gap-1 sm:gap-2">
+        <p className="font-[Georgia,serif] italic text-gray-500/90 text-lg sm:text-2xl md:text-3xl font-bold tracking-wide drop-shadow-sm translate-y-2 md:translate-y-3 whitespace-nowrap">
+          we love youu teachers 
+        </p>
+        <img src="/assets/teddy.png" alt="cute snoopy" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain drop-shadow-md shrink-0" />
+      </div>
+
 
       {/* ── Notebook ruled lines background ── */}
       <div className="absolute inset-0 pt-14 pointer-events-none">
@@ -141,11 +149,7 @@ export default function NotesSection({ onBack }: { onBack: () => void }) {
         <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" strokeLinejoin="round" />
       </svg>
 
-      {/* Moon */}
-      <svg className="absolute top-[8%] left-[80%] w-6 h-6 text-yellow-200 opacity-70 rotate-[15deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-      </svg>
-
+      {/* Moon removed per request */}
       {/* Cute Clouds */}
       <svg className="absolute top-[35%] left-[5%] w-10 h-10 text-blue-200 opacity-40 pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.5 19c2.48 0 4.5-2.02 4.5-4.5 0-2.31-1.74-4.22-3.98-4.47C17.44 6.78 14.93 5 12 5 8.92 5 6.27 7.15 5.4 10.03 2.87 10.36 1 12.51 1 15c0 2.76 2.24 5 5 5h11.5z"/>
