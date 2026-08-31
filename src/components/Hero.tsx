@@ -25,8 +25,6 @@ const pages = [
               <div className="absolute inset-0 pointer-events-none">
                 <div className="w-full h-[14px] border-b border-blue-200"></div>
                 <div className="w-full h-[14px] border-b border-blue-200"></div>
-                {/* Pink margin line */}
-                <div className="absolute top-0 left-4 h-full border-l border-pink-300"></div>
               </div>
               <span className="relative z-10 font-[Georgia,serif] text-base italic font-semibold tracking-wide text-gray-700 ml-2 group-hover:text-pink-600 transition-colors">
                 Read the notes 
@@ -182,8 +180,6 @@ export default function Hero() {
             {Array.from({ length: 14 }).map((_, i) => (
               <div key={i} className="w-full border-b border-blue-100/60" style={{ height: "28px" }} />
             ))}
-            {/* Left margin line */}
-            <div className="absolute top-0 left-14 h-full border-l-2 border-pink-200/50" />
           </div>
 
           {/* Page content */}
