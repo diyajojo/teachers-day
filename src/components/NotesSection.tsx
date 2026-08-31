@@ -74,20 +74,55 @@ export default function NotesSection({ onBack }: { onBack: () => void }) {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-      {/* Back button */}
-      <button
-        onClick={onBack}
-        className="absolute top-4 left-4 z-30 flex items-center gap-1.5 font-[Georgia,serif] italic text-gray-400 hover:text-gray-600 text-xs md:text-sm transition-colors group"
-      >
-        <svg className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M19 12H5M12 5l-7 7 7 7" />
-        </svg>
-        go back
-      </button>
 
-      <p className="absolute top-4 left-1/2 -translate-x-1/2 z-10 font-[Georgia,serif] italic text-gray-300 text-xs pointer-events-none select-none whitespace-nowrap animate-pulse">
-        tap an envelope to read ✉️
-      </p>
+      {/* ── Notebook ruled lines background ── */}
+      <div className="absolute inset-0 pt-14 pointer-events-none">
+        {Array.from({ length: 30 }).map((_, i) => (
+          <div key={i} className="w-full border-b border-blue-100/60" style={{ height: "28px" }} />
+        ))}
+      </div>
+
+      {/* ── Soft dotted paths ── */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M -50 200 Q 250 350, 600 150 T 1200 300" fill="transparent" stroke="#d8b4fe" strokeWidth="1.5" strokeDasharray="6, 10" />
+        <path d="M 100 500 Q 400 600, 800 400 T 1400 550" fill="transparent" stroke="#fbcfe8" strokeWidth="1.5" strokeDasharray="6, 10" />
+        <path d="M 0 80 Q 300 -30, 700 120 T 1400 50" fill="transparent" stroke="#fbcfe8" strokeWidth="1.2" strokeDasharray="5, 12" />
+      </svg>
+
+      {/* ── Decorative doodles ── */}
+      {/* Hearts */}
+      <svg className="absolute top-[22%] left-[28%] w-5 h-5 text-pink-300 opacity-60 rotate-[-12deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <svg className="absolute top-[55%] left-[42%] w-4 h-4 text-purple-300 opacity-50 rotate-[10deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <svg className="absolute bottom-[20%] right-[28%] w-5 h-5 text-pink-200 opacity-70 -rotate-[8deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+
+      {/* Stars */}
+      <svg className="absolute top-[15%] right-[22%] w-4 h-4 text-yellow-300 opacity-60 rotate-[20deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+      </svg>
+      <svg className="absolute bottom-[30%] left-[33%] w-3 h-3 text-yellow-300 opacity-50 -rotate-[10deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+      </svg>
+      <svg className="absolute top-[68%] right-[12%] w-4 h-4 text-purple-300 opacity-50 rotate-[15deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+      </svg>
+
+      {/* Small outline flowers */}
+      <svg className="absolute top-[38%] right-[32%] w-7 h-7 text-pink-200 opacity-60 rotate-[12deg] pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
+        <circle cx="50" cy="50" r="10" />
+        <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" strokeLinejoin="round" />
+      </svg>
+      <svg className="absolute bottom-[15%] left-[48%] w-6 h-6 text-purple-200 opacity-50 -rotate-[18deg] pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
+        <circle cx="50" cy="50" r="10" />
+        <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" strokeLinejoin="round" />
+      </svg>
+
+     
 
       {/* Scattered envelopes */}
       {envelopes.map((env) => (
