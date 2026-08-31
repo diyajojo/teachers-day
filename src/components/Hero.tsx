@@ -13,13 +13,26 @@ const pages = [
           Some things were left unsaid in the classroom, but we noticed and we remember. Here are a few honest, heartfelt words from the students who always meant them. ❤️
         </p>
         
-        <div className="flex justify-center mt-2">
-          <button
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-            className="bg-[#e879a0] hover:bg-[#d63384] text-white font-semibold text-sm px-7 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-          >
-            Read the notes ✨
-          </button>
+        <div className="flex justify-center mt-4 mb-2 relative">
+          <div className="relative group cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}>
+            {/* Washi tape effect */}
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-pink-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.1)] rotate-[-4deg] z-20 opacity-90 transition-transform duration-300 group-hover:rotate-[-2deg]"></div>
+            
+            <button
+              className="relative overflow-hidden bg-white px-8 py-3 shadow-[2px_3px_5px_rgba(0,0,0,0.15)] hover:shadow-[4px_6px_10px_rgba(0,0,0,0.2)] transition-all duration-300 group-hover:-translate-y-1 border border-gray-200 rounded-sm transform rotate-2 group-hover:rotate-0"
+            >
+              {/* Notebook lines on button */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="w-full h-[14px] border-b border-blue-200"></div>
+                <div className="w-full h-[14px] border-b border-blue-200"></div>
+                {/* Pink margin line */}
+                <div className="absolute top-0 left-4 h-full border-l border-pink-300"></div>
+              </div>
+              <span className="relative z-10 font-[Georgia,serif] text-base italic font-semibold tracking-wide text-gray-700 ml-2 group-hover:text-pink-600 transition-colors">
+                Read the notes 
+              </span>
+            </button>
+          </div>
         </div>
 
         <div className="mt-auto flex items-end justify-between gap-3 pt-4">
