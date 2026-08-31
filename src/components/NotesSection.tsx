@@ -2,18 +2,30 @@
 import { useState } from "react";
 
 const envelopes = [
-  { id: 1,  color: "#f9a8d4", flap: "#f472b6", seal: "#ec4899", label: "A", top: "12%", left: "8%",  rotate: "-8deg"  },
-  { id: 2,  color: "#a5f3fc", flap: "#67e8f9", seal: "#22d3ee", label: "B", top: "20%", left: "35%", rotate: "5deg"   },
-  { id: 3,  color: "#fde68a", flap: "#fcd34d", seal: "#f59e0b", label: "C", top: "8%",  left: "60%", rotate: "-4deg"  },
-  { id: 4,  color: "#bbf7d0", flap: "#6ee7b7", seal: "#10b981", label: "D", top: "38%", left: "15%", rotate: "10deg"  },
-  { id: 5,  color: "#ddd6fe", flap: "#a78bfa", seal: "#7c3aed", label: "E", top: "45%", left: "55%", rotate: "-6deg"  },
-  { id: 6,  color: "#fed7aa", flap: "#fb923c", seal: "#ea580c", label: "F", top: "55%", left: "28%", rotate: "7deg"   },
-  { id: 7,  color: "#fca5a5", flap: "#f87171", seal: "#dc2626", label: "G", top: "62%", left: "70%", rotate: "-9deg"  },
-  { id: 8,  color: "#c7d2fe", flap: "#818cf8", seal: "#4f46e5", label: "H", top: "30%", left: "78%", rotate: "3deg"   },
-  { id: 9,  color: "#d1fae5", flap: "#34d399", seal: "#059669", label: "I", top: "72%", left: "10%", rotate: "-5deg"  },
-  { id: 10, color: "#fef3c7", flap: "#fde68a", seal: "#d97706", label: "J", top: "75%", left: "48%", rotate: "8deg"   },
-  { id: 11, color: "#fbcfe8", flap: "#f9a8d4", seal: "#db2777", label: "K", top: "18%", left: "88%", rotate: "-12deg" },
-  { id: 12, color: "#e0f2fe", flap: "#7dd3fc", seal: "#0284c7", label: "L", top: "83%", left: "80%", rotate: "4deg"   },
+  // Row 1
+  { id: 1,  color: "#f9a8d4", flap: "#f472b6", top: "15%", left: "15%", rotate: "-8deg"  }, // Pink
+  { id: 2,  color: "#a5f3fc", flap: "#67e8f9", top: "12%", left: "45%", rotate: "5deg"   }, // Cyan
+  { id: 3,  color: "#fde68a", flap: "#fcd34d", top: "16%", left: "75%", rotate: "-4deg"  }, // Yellow
+  
+  // Row 2
+  { id: 4,  color: "#bbf7d0", flap: "#6ee7b7", top: "32%", left: "25%", rotate: "10deg"  }, // Green
+  { id: 5,  color: "#ddd6fe", flap: "#a78bfa", top: "28%", left: "52%", rotate: "-6deg"  }, // Purple
+  { id: 6,  color: "#fed7aa", flap: "#fb923c", top: "34%", left: "78%", rotate: "7deg"   }, // Orange
+  
+  // Row 3
+  { id: 7,  color: "#fca5a5", flap: "#f87171", top: "49%", left: "12%", rotate: "-9deg"  }, // Red
+  { id: 8,  color: "#c7d2fe", flap: "#818cf8", top: "46%", left: "48%", rotate: "3deg"   }, // Indigo
+  { id: 9,  color: "#a5f3fc", flap: "#67e8f9", top: "51%", left: "72%", rotate: "-5deg"  }, // Cyan
+  
+  // Row 4
+  { id: 10, color: "#fde68a", flap: "#fcd34d", top: "66%", left: "20%", rotate: "8deg"   }, // Yellow
+  { id: 11, color: "#f9a8d4", flap: "#f472b6", top: "63%", left: "55%", rotate: "-12deg" }, // Pink
+  { id: 12, color: "#bbf7d0", flap: "#6ee7b7", top: "68%", left: "78%", rotate: "4deg"   }, // Green
+  
+  // Row 5
+  { id: 13, color: "#fed7aa", flap: "#fb923c", top: "83%", left: "18%", rotate: "6deg"   }, // Orange
+  { id: 14, color: "#fca5a5", flap: "#f87171", top: "85%", left: "45%", rotate: "-7deg"  }, // Red
+  { id: 15, color: "#c7d2fe", flap: "#818cf8", top: "81%", left: "75%", rotate: "9deg"   }, // Indigo
 ];
 
 function EnvelopeSVG({ color, flap, isOpen }: {
