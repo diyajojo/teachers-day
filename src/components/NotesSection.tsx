@@ -134,7 +134,39 @@ export default function NotesSection({ onBack }: { onBack: () => void }) {
         <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" strokeLinejoin="round" />
       </svg>
 
-     
+      {/* Moon */}
+      <svg className="absolute top-[8%] left-[80%] w-6 h-6 text-yellow-200 opacity-70 rotate-[15deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+      </svg>
+
+      {/* Cute Clouds */}
+      <svg className="absolute top-[35%] left-[5%] w-10 h-10 text-blue-200 opacity-40 pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.5 19c2.48 0 4.5-2.02 4.5-4.5 0-2.31-1.74-4.22-3.98-4.47C17.44 6.78 14.93 5 12 5 8.92 5 6.27 7.15 5.4 10.03 2.87 10.36 1 12.51 1 15c0 2.76 2.24 5 5 5h11.5z"/>
+      </svg>
+      <svg className="absolute bottom-[25%] right-[8%] w-12 h-12 text-pink-100 opacity-40 pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.5 19c2.48 0 4.5-2.02 4.5-4.5 0-2.31-1.74-4.22-3.98-4.47C17.44 6.78 14.93 5 12 5 8.92 5 6.27 7.15 5.4 10.03 2.87 10.36 1 12.51 1 15c0 2.76 2.24 5 5 5h11.5z"/>
+      </svg>
+
+      {/* Sparkles */}
+      <svg className="absolute top-[25%] left-[65%] w-4 h-4 text-yellow-400 opacity-50 rotate-[-10deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
+      </svg>
+      <svg className="absolute top-[65%] left-[25%] w-3 h-3 text-pink-300 opacity-60 rotate-[20deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
+      </svg>
+      <svg className="absolute bottom-[10%] right-[35%] w-4 h-4 text-purple-300 opacity-50 rotate-[45deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
+      </svg>
+
+      {/* Paper Airplane */}
+      <svg className="absolute top-[20%] left-[85%] w-5 h-5 text-blue-300 opacity-50 -rotate-[15deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+      </svg>
+
+      {/* Bows */}
+      <img src="/assets/bow.png" alt="bow doodle" className="absolute top-[48%] left-[85%] w-8 opacity-40 rotate-[15deg] pointer-events-none select-none drop-shadow-sm" />
+      <img src="/assets/bow.png" alt="bow doodle" className="absolute bottom-[18%] left-[15%] w-10 opacity-30 rotate-[-20deg] pointer-events-none select-none drop-shadow-sm" />
+
 
       {/* Scattered envelopes */}
       {envelopes.map((env) => (
