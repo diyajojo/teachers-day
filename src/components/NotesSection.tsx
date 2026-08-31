@@ -95,10 +95,17 @@ export default function NotesSection({ onBack }: { onBack: () => void }) {
       </div>
 
       {/* ── Soft dotted paths ── */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        {/* Existing paths */}
         <path d="M -50 200 Q 250 350, 600 150 T 1200 300" fill="transparent" stroke="#d8b4fe" strokeWidth="1.5" strokeDasharray="6, 10" />
         <path d="M 100 500 Q 400 600, 800 400 T 1400 550" fill="transparent" stroke="#fbcfe8" strokeWidth="1.5" strokeDasharray="6, 10" />
         <path d="M 0 80 Q 300 -30, 700 120 T 1400 50" fill="transparent" stroke="#fbcfe8" strokeWidth="1.2" strokeDasharray="5, 12" />
+        {/* Winding vector lines between envelopes */}
+        <path d="M -100 750 Q 200 650, 500 800 T 1500 700" fill="transparent" stroke="#bbf7d0" strokeWidth="1.5" strokeDasharray="6, 8" />
+        <path d="M 1200 900 Q 800 1000, 500 850 T -100 950" fill="transparent" stroke="#fde68a" strokeWidth="1.5" strokeDasharray="5, 10" />
+        {/* Connective swoops */}
+        <path d="M 200 150 Q 50 300, 300 400" fill="transparent" stroke="#a5f3fc" strokeWidth="1.2" strokeDasharray="4, 6" />
+        <path d="M 800 500 Q 950 650, 700 800" fill="transparent" stroke="#f9a8d4" strokeWidth="1.2" strokeDasharray="4, 6" />
       </svg>
 
       {/* ── Decorative doodles ── */}
@@ -148,6 +155,14 @@ export default function NotesSection({ onBack }: { onBack: () => void }) {
       </svg>
 
       {/* Sparkles */}
+      {/* Newly added doodles for left gap */}
+      <svg className="absolute top-[58%] left-[12%] w-4 h-4 text-pink-300 opacity-60 rotate-[-15deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
+      </svg>
+      <svg className="absolute top-[55%] left-[18%] w-5 h-5 text-yellow-300 opacity-50 rotate-[30deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+      </svg>
+
       <svg className="absolute top-[25%] left-[65%] w-4 h-4 text-yellow-400 opacity-50 rotate-[-10deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
       </svg>
@@ -166,6 +181,23 @@ export default function NotesSection({ onBack }: { onBack: () => void }) {
       {/* Bows */}
       <img src="/assets/bow.png" alt="bow doodle" className="absolute top-[48%] left-[85%] w-8 opacity-40 rotate-[15deg] pointer-events-none select-none drop-shadow-sm" />
       <img src="/assets/bow.png" alt="bow doodle" className="absolute bottom-[18%] left-[15%] w-10 opacity-30 rotate-[-20deg] pointer-events-none select-none drop-shadow-sm" />
+
+      {/* ── Additional Bottom Doodles ── */}
+      <svg className="absolute bottom-[5%] left-[25%] w-6 h-6 text-yellow-300 opacity-60 rotate-[-15deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+      </svg>
+      <svg className="absolute bottom-[4%] right-[20%] w-7 h-7 text-pink-200 opacity-50 rotate-[25deg] pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
+        <circle cx="50" cy="50" r="10" />
+        <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" strokeLinejoin="round" />
+      </svg>
+      <svg className="absolute bottom-[8%] left-[60%] w-4 h-4 text-purple-300 opacity-60 rotate-[10deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
+      </svg>
+      <svg className="absolute bottom-[3%] left-[10%] w-5 h-5 text-pink-300 opacity-60 rotate-[-12deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <img src="/assets/bow.png" alt="bow doodle" className="absolute bottom-[3%] right-[40%] w-8 opacity-40 rotate-[5deg] pointer-events-none select-none drop-shadow-sm" />
+
 
 
       {/* Scattered envelopes */}
