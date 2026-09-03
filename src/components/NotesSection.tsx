@@ -56,13 +56,13 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
         >
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity" />
           <div 
-            className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-md shadow-2xl flex flex-col transition-transform"
-            style={{ backgroundColor: selectedNote.bgColor, padding: '3rem' }}
+            className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-md shadow-2xl flex flex-col transition-transform p-6 md:p-12"
+            style={{ backgroundColor: selectedNote.bgColor }}
             onClick={(e) => e.stopPropagation()}
           >
             <button 
               onClick={() => setSelectedNote(null)}
-              className={`absolute top-6 right-6 opacity-50 hover:opacity-100 transition-opacity ${selectedNote.textColor}`}
+              className={`absolute top-4 right-4 md:top-6 md:right-6 opacity-50 hover:opacity-100 transition-opacity ${selectedNote.textColor}`}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
