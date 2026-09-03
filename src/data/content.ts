@@ -5,7 +5,7 @@ export const notes = [
     "title": "The first mentor who comes to mind...",
     "body": "When I think back to college, the first mentor who comes to mind isn't someone from the lecture hall, but Biju Sir from the lab. During our project phase, we honestly had zero clue where to begin. While our whole batch was constantly scrambling on Google for every tiny circuit issue, Biju Sir would just look at the board and figure out what was wrong manually. His practical knowledge of electronics was genuinely amazing to watch. More than that, he never once made us feel stupid for not knowing the basics. He was always ready to sit with us, guide our hands, and help us troubleshoot until the circuit actually worked. If we managed to complete our project successfully, it was truly because of his patience and support. A great teacher isn't just someone who teaches theory on a board—it's someone who steps in and helps you build things from scratch. Thank you for everything, Biju Sir. Wishing you a very Happy Teachers' Day!",
     "author": "M A SREELAKSHMI",
-    "subtext": "ECA\n2026 PASS OUT\nFaculty : BIJU MATHEW - EC DEPT.",
+    "subtext": "2026 PASS OUT",
     "bgColor": "#f2cc8f",
     "textColor": "text-gray-900"
   },
@@ -15,7 +15,7 @@ export const notes = [
     "title": "Happy Teachers' Day, Sincy Ma'am! ❤️",
     "body": "Thank you for being such a wonderful teacher and for always encouraging and believing in us. I'm truly grateful for all your guidance, support, and the little things you've done that made a difference. So lucky to have been your student. Wishing you a very Happy Teachers' Day! 🌷",
     "author": "Hridya Praveen",
-    "subtext": "EB DEPT\n2026 PASS OUT\nTO- SINCY MISS EB DEPT.",
+    "subtext": "2026 PASS OUT",
     "bgColor": "#f4e285",
     "textColor": "text-gray-900"
   },
@@ -35,7 +35,7 @@ export const notes = [
     "title": "Behind the pucham...",
     "body": "We first noticed her because of those white Nike shoes and thought, “Is that a teacher?” 😄 When we first talked to her, the pucham was definitely there, and it took us a while to realize that behind it was one of the most friendly and approachable teachers ever. A teacher and mentor you could share anything with, joke around with, and always reach out to without hesitation. Thank you for being such a wonderful teacher, mentor, and human being. ❤️",
     "author": "Goutham C Arun",
-    "subtext": "2025 batch.\nto : kiran miss",
+    "subtext": "2025 batch.",
     "bgColor": "#e27c70",
     "textColor": "text-gray-900"
   },
@@ -45,7 +45,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Some faculties teach from the syllabus, while some leave an impact that stays long after the class ends. Thank you for your patience, guidance, and for always pushing me and my brother to do better. I may not have said it enough, but I’m genuinely grateful for everything you’ve done.You may never know who this message is from, but I hope you know that somewhere among all the students you’ve taught, there’s one who is genuinely grateful for the difference you made. Thank you for everything.",
     "author": "Anonymous",
-    "subtext": "Batch: 2025\nFor: Joseph George sir, Electronics and communication department",
+    "subtext": "Batch: 2025",
     "bgColor": "#d5cce6",
     "textColor": "text-gray-900"
   },
@@ -55,7 +55,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "A thank you wouldn't be enough.\nNothing i write or say wouldn't be enough.\n\nYou picked me up and pushed me when I was in a really bad place.\nYou taught me the basics from scratch when I didn't know anything.\nYou always reminded me to keep my head up in tough times , to keep moving and to not take life seriously.\nWithout you and the amazing friends i've met in my college , I don't think I would have completed college.\nThings would have been completely different.\n\nYou're easily one of the best people I've ever met in my life.\nI genuinely don't know how to repay you , with all the kindness and support you've given me.\nHoping one day I could.\n\nA teacher/mentor figure like you is a blessing to any student out there trying to figure things out.\nPeople like you make the world more kind and a better place to live.\n\nThank you guiding me through and through , miss.\nWishing you everything good as always.",
     "author": "Anonymous",
-    "subtext": "Batch: 2024\nFor: Rekha R - Computer Science and Engineering",
+    "subtext": "Batch: 2024",
     "bgColor": "#ddd6fe",
     "textColor": "text-gray-900"
   },
@@ -65,7 +65,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Thank you Manilal sir for the unforgettable viva",
     "author": "Anonymous",
-    "subtext": "Batch: CSB 2021\nFor: Dr Manilal, computer science and engineering",
+    "subtext": "Batch: CSB 2021",
     "bgColor": "#d5cce6",
     "textColor": "text-gray-900"
   },
@@ -75,7 +75,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Best teacher in mec ...more than a teacher....made college more fun and enjoyable",
     "author": "Antony Yesudas",
-    "subtext": "Batch: 2025\nFor: Kiran Mary Miss, Computer Science",
+    "subtext": "Batch: 2025",
     "bgColor": "#d5cce6",
     "textColor": "text-gray-900"
   },
@@ -85,7 +85,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Miss naghade staff advisor ayirunnu…first year vannapoo miss paraghadh Enike ippozhum ormayund to see her like a second mom actually she was exactly like that for me at the end in the fourth year ..Miss enneyum nanavan vende orupadu cheetha paraghind and endeyum naghade ellarudeyum improvement miss eppozhum note cheyumarnnu and ath miss appreciate um cheyarund.. nth preshnm undenkilum miss vayagara approachable ahn….she is the best teacher ❤️",
     "author": "Anonymous",
-    "subtext": "Batch: 2026\nFor: Sincy Ma’am and EB department",
+    "subtext": "Batch: 2026",
     "bgColor": "#bbf7d0",
     "textColor": "text-gray-900"
   },
@@ -95,7 +95,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "I remember once due to my carelessness, i missed an internal faculty signature for a lab record and my lab exam happened to be on the next day, Rekha miss (Our lab faculty head) was on a lab duty in a different college when i called her, and other teachers were also on such duty, somehow i managed to get a signature of one of the teachers available, but what surprised me the most is, as soon as Rekha Miss reached the college back the same day, despite her tiring journey and busy schedule, she still remembered my problem and gave me a call and made sure i’ve got a signature and was waiting in campus incase i didn’t get one. That one phone call reminded me how serious this job was to her, and how each student mattered to her.",
     "author": "Anonymous",
-    "subtext": "Batch: 2025\nFor: Rekha Miss, CSE",
+    "subtext": "Batch: 2025",
     "bgColor": "#f9a8d4",
     "textColor": "text-gray-900"
   },
@@ -105,7 +105,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Everyone would agree that she was a dedicated and amiable teacher. Although she commanded great respect as a teacher, we could always relate to her like an elder sister.",
     "author": "Parthiv",
-    "subtext": "Batch: 2025\nFor: Kiran Mary Matthew, CS Dept.",
+    "subtext": "Batch: 2025",
     "bgColor": "#f2cc8f",
     "textColor": "text-gray-900"
   },
@@ -115,7 +115,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "I may not have said it enough back then, but thank you — for believing in me, correcting me, encouraging me, and always wanting me to do better. I will always be grateful for that.",
     "author": "Joyel Jinson",
-    "subtext": "Batch: 2026\nFor: Electronics and biomedical",
+    "subtext": "Batch: 2026",
     "bgColor": "#d5cce6",
     "textColor": "text-gray-900"
   },
@@ -125,7 +125,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Teach properly and not just read from ur ppt .Teach them properly,take care of them individually,talk to them ,ask about their dreams ,and guide their journey on what careers they would like",
     "author": "Anonymous",
-    "subtext": "Batch: 2025\nFor: EEE",
+    "subtext": "Batch: 2025",
     "bgColor": "#a2c3d4",
     "textColor": "text-gray-900"
   },
@@ -135,7 +135,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Dear Ma’am,\n\nI really admire how calm and understanding you always are. You are always approachable and never hesitate to help us whenever we need it. It genuinely feels nice to have someone around who brings such a calm and positive energy.\n\nI am also really grateful for the effort you put into making sure we have enough study materials and guidance. It makes learning a lot easier for us.\n\nThank you for always being so kind, supportive, and approachable. Happy Teacher’s Day, Ma’am! ❤️",
     "author": "Athulya",
-    "subtext": "Batch: 2026\nFor: Vijaylekshmi miss , electronics and biomedical",
+    "subtext": "Batch: 2026",
     "bgColor": "#f2cc8f",
     "textColor": "text-gray-900"
   },
@@ -145,7 +145,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Thank you so much for always being there for us. Your guidance and support made us who we are today. Specially Electrical department teachers, simply Thank You! with all gratitude.",
     "author": "Anonymous",
-    "subtext": "Batch: 2026\nFor: Electrical Department",
+    "subtext": "Batch: 2026",
     "bgColor": "#bbf7d0",
     "textColor": "text-gray-900"
   },
@@ -155,7 +155,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Thank you ma'am for stepping in at the right time and standing up for me , that one moment has given me a second chance at life. I'm forever indebted to you.",
     "author": "Anonymous",
-    "subtext": "Batch: 2025\nFor: Jayashree K",
+    "subtext": "Batch: 2025",
     "bgColor": "#bbf7d0",
     "textColor": "text-gray-900"
   },
@@ -175,7 +175,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "The teachers from the EEE department were truly gems. They supported me from the very beginning of my BTech journey, be it in academics, extracurricular activities, or anything else. The teachers here were the most approachable and supportive, and truly the best. Thank you, teachers, for all your support and guidance.",
     "author": "Rohit Jose",
-    "subtext": "Batch: EEE- 2026\nFor: EEE Department",
+    "subtext": "Batch: EEE- 2026",
     "bgColor": "#e8a786",
     "textColor": "text-gray-900"
   },
@@ -185,7 +185,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Thank you, Sir and Ma'am, for all your support during Excel 2025. It was a genuinely tough undertaking, and your guidance from day one of the core handover meant a lot to us. There were moments we were stuck and exhausted and didn't know how to move forward — thank you for holding us up through those times. We couldn't have pulled off Excel 2025, through its best and hardest moments, without your support.",
     "author": "Rohit Jose",
-    "subtext": "Batch: EEE - 2026\nFor: Dr. Jayachandran E.S (Principal) and Dr. Bindu V (EEE HOD)",
+    "subtext": "Batch: EEE - 2026",
     "bgColor": "#ffffff",
     "textColor": "text-gray-900"
   },
@@ -205,7 +205,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Reshma miss, A teacher whom I never wish to forget from college after these many years, she was not only a teacher also who have been a friend who guided me through my masters years as well. A person who taught in a way that was never so bookish and was a super supportive person outside class too. She's an inspiration, who took research as her path, and I aspire to cross paths with someday!",
     "author": "Haritha Paul",
-    "subtext": "Batch: 2019\nFor: Reshma Prasad, CSE",
+    "subtext": "Batch: 2019",
     "bgColor": "#ffffff",
     "textColor": "text-gray-900"
   },
@@ -215,7 +215,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "Looking back, I realize how much of who I am today has been shaped by the people who taught, guided, corrected, and encouraged me along the way. Thank you for every lesson, every piece of advice, and every little moment that made a difference.",
     "author": "Anonymous",
-    "subtext": "Batch: 2026\nFor: Computer Science",
+    "subtext": "Batch: 2026",
     "bgColor": "#f2cc8f",
     "textColor": "text-gray-900"
   },
@@ -225,7 +225,7 @@ export const notes = [
     "title": "Happy Teachers' Day!",
     "body": "What stands out the most about Aparna Miss is how she genuinely makes sure that every student understands the concept before moving on. I’m usually someone who doesn’t pay much attention during class, but in her classes, it’s rare for me to miss a topic or feel like not listening. The way she explains things makes even difficult concepts easier to understand and keeps you engaged. Her patience and the effort she puts into making sure everyone understands is something I’ll always appreciate. \nThank you, Miss, for making learning feel so much more meaningful.",
     "author": "Anavadya N Lakshmi",
-    "subtext": "Batch: 2026\nFor: Aparna Shrijesh - CS",
+    "subtext": "Batch: 2026",
     "bgColor": "#a4c1a7",
     "textColor": "text-gray-900"
   },
