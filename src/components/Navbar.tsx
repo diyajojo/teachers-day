@@ -19,7 +19,7 @@ export default function Navbar() {
       </div>
 
       {/* Left: Excel Logo */}
-      <div className="relative z-10 flex items-center gap-3 shrink-0">
+      <div className="relative z-10 flex items-center shrink-0 flex-1">
         <div className="relative w-14 h-14 md:w-28 md:h-28">
           <Image
             src="/assets/excel26.png"
@@ -31,7 +31,7 @@ export default function Navbar() {
       </div>
 
       {/* Center: Happy Teacher's Day — beautifully typeset */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 select-none">
+      <div className="z-10 flex flex-col items-center gap-1 select-none shrink-0 mx-2">
     
 
         {/* Happy */}
@@ -40,7 +40,7 @@ export default function Navbar() {
         </p>
 
         {/* Teacher's Day */}
-        <h1 className="text-[#5c3d6b] font-serif text-xl md:text-4xl lg:text-5xl tracking-widest leading-none drop-shadow-sm">
+        <h1 className="text-[#5c3d6b] font-serif text-xl md:text-4xl lg:text-5xl tracking-widest leading-none drop-shadow-sm text-center">
           Teacher&apos;s Day
         </h1>
 
@@ -56,7 +56,7 @@ export default function Navbar() {
       </div>
 
       {/* Right: Aeroplane decorative element */}
-      <div className="relative z-10 flex items-center shrink-0">
+      <div className="relative z-10 flex items-center shrink-0 flex-1 justify-end">
         <div className="relative w-10 h-10 md:w-20 md:h-20 opacity-80">
           <Image src="/assets/aeroplane.png" alt="Aeroplane" fill className="object-contain rotate-6" />
         </div>
