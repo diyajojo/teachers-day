@@ -20,26 +20,26 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
         </div>
         
         {/* Masonry Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 md:gap-6 space-y-4 md:gap-y-6 md:space-y-6">
-          {notes.map(note => (
+        <div className="columns-2 sm:columns-3 lg:columns-4 gap-3 md:gap-6 space-y-3 md:space-y-6">
+          {notes.map((note, index) => (
             <div 
               key={note.id} 
               onClick={() => setSelectedNote(note)}
-              className={`break-inside-avoid shadow-sm hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer flex flex-col rounded-sm`}
-              style={{ backgroundColor: note.bgColor, padding: '2rem' }}
+              className={`break-inside-avoid shadow-sm hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer flex flex-col rounded-sm p-4 md:p-8 ${index % 2 === 0 ? 'rotate-1' : '-rotate-1 hover:rotate-0'}`}
+              style={{ backgroundColor: note.bgColor }}
             >
-              <p className={`text-[10px] font-sans font-semibold uppercase tracking-widest opacity-60 mb-6 ${note.textColor}`}>
+              <p className={`text-[8px] md:text-[10px] font-sans font-semibold uppercase tracking-widest opacity-60 mb-4 md:mb-6 ${note.textColor}`}>
                 {note.tag}
               </p>
-              <h3 className={`font-[Georgia,serif] text-xl md:text-2xl font-bold mb-4 leading-tight ${note.textColor}`}>
+              <h3 className={`font-[Georgia,serif] text-lg md:text-2xl font-bold mb-3 md:mb-4 leading-tight ${note.textColor}`}>
                 {note.title}
               </h3>
               {note.body && (
-                <p className={`font-[Georgia,serif] text-base md:text-lg mb-8 leading-snug opacity-90 line-clamp-5 ${note.textColor}`}>
+                <p className={`font-[Georgia,serif] text-sm md:text-lg mb-6 md:mb-8 leading-snug opacity-90 line-clamp-4 md:line-clamp-5 ${note.textColor}`}>
                   {note.body}
                 </p>
               )}
-              <div className={`mt-auto pt-4 text-xs opacity-70 whitespace-pre-wrap font-sans leading-relaxed ${note.textColor}`}>
+              <div className={`mt-auto pt-3 text-[10px] md:text-xs opacity-70 whitespace-pre-wrap font-sans leading-relaxed ${note.textColor}`}>
                 <strong>{note.author}</strong><br/>
                 {note.subtext}
               </div>
