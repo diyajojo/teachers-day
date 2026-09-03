@@ -1,285 +1,162 @@
 "use client";
-import { useState } from "react";
 
-const envelopes = [
-  // Row 1
-  { id: 1,  color: "#f9a8d4", flap: "#f472b6", top: "15%", left: "15%", rotate: "-8deg"  }, // Pink
-  { id: 2,  color: "#a5f3fc", flap: "#67e8f9", top: "12%", left: "45%", rotate: "5deg"   }, // Cyan
-  { id: 3,  color: "#fde68a", flap: "#fcd34d", top: "16%", left: "75%", rotate: "-4deg"  }, // Yellow
-  
-  // Row 2
-  { id: 4,  color: "#bbf7d0", flap: "#6ee7b7", top: "32%", left: "25%", rotate: "10deg"  }, // Green
-  { id: 5,  color: "#ddd6fe", flap: "#a78bfa", top: "28%", left: "52%", rotate: "-6deg"  }, // Purple
-  { id: 6,  color: "#fed7aa", flap: "#fb923c", top: "34%", left: "78%", rotate: "7deg"   }, // Orange
-  
-  // Row 3
-  { id: 7,  color: "#fca5a5", flap: "#f87171", top: "49%", left: "12%", rotate: "-9deg"  }, // Red
-  { id: 8,  color: "#c7d2fe", flap: "#818cf8", top: "46%", left: "48%", rotate: "3deg"   }, // Indigo
-  { id: 9,  color: "#a5f3fc", flap: "#67e8f9", top: "51%", left: "72%", rotate: "-5deg"  }, // Cyan
-  
-  // Row 4
-  { id: 10, color: "#fde68a", flap: "#fcd34d", top: "66%", left: "20%", rotate: "8deg"   }, // Yellow
-  { id: 11, color: "#f9a8d4", flap: "#f472b6", top: "63%", left: "55%", rotate: "-12deg" }, // Pink
-  { id: 12, color: "#bbf7d0", flap: "#6ee7b7", top: "68%", left: "78%", rotate: "4deg"   }, // Green
-  
-  // Row 5
-  { id: 13, color: "#fed7aa", flap: "#fb923c", top: "83%", left: "18%", rotate: "6deg"   }, // Orange
-  { id: 14, color: "#fca5a5", flap: "#f87171", top: "85%", left: "45%", rotate: "-7deg"  }, // Red
-  { id: 15, color: "#c7d2fe", flap: "#818cf8", top: "81%", left: "75%", rotate: "9deg"   }, // Indigo
+const notes = [
+  {
+    id: 1,
+    tag: "LETTER",
+    title: "Dear Ma'am,",
+    body: "Your class was the reason I stopped being afraid of getting things wrong.",
+    author: "Ananya Rao",
+    subtext: "for Mrs. Anjali Menon\nClass of 2024 · Mumbai\n\nWritten after the final bell.",
+    bgColor: "#e27c70",
+    textColor: "text-gray-900",
+  },
+  {
+    id: 2,
+    tag: "CLASSROOM MEMORY",
+    title: "The year everything changed.",
+    body: "And the year Ms. Farah let us keep the class plant.",
+    author: "Ishita Kapoor",
+    subtext: "for Ms. Farah Ali\nDelhi Public School · 2009\n\nSaved from a classroom memory.",
+    bgColor: "#ffffff",
+    textColor: "text-gray-900",
+  },
+  {
+    id: 3,
+    tag: "FOR MY TEACHER",
+    title: "The last bench club",
+    body: "We learned algebra, friendship, and how to share one samosa between four people.",
+    author: "Neha Singh",
+    subtext: "for Mr. Arvind Kumar\nLucknow · 2012",
+    bgColor: "#ffffff",
+    textColor: "text-gray-900",
+  },
+  {
+    id: 4,
+    tag: "A SMALL CONFESSION",
+    title: "You made reading feel like a place I could go to.",
+    body: "I still carry that place with me.",
+    author: "Meera Nair",
+    subtext: "for Mrs. Priya Iyer\nBengaluru · 2016",
+    bgColor: "#d5cce6",
+    textColor: "text-gray-900",
+  },
+  {
+    id: 5,
+    tag: "FROM THE NOTEBOOK",
+    title: "You taught me to ask better questions.",
+    body: "That turned out to be the answer.",
+    author: "Sana Khan",
+    subtext: "for Dr. Rao\nHyderabad · 2017",
+    bgColor: "#e8c85a",
+    textColor: "text-gray-900",
+  },
+  {
+    id: 6,
+    tag: "A LITTLE NOTE",
+    title: "Thank you for believing in me",
+    body: "before I knew how to believe in myself.",
+    author: "Dev Patel",
+    subtext: "for Mrs. Kavita Shah\nClass 10-B · Ahmedabad",
+    bgColor: "#efdf6d",
+    textColor: "text-gray-900",
+  },
+  {
+    id: 7,
+    tag: "SOMETHING TRUE",
+    title: "Some teachers teach subjects.",
+    body: "The best ones teach you how to see the world.",
+    author: "Rohan Mehta",
+    subtext: "for Mr. Thomas\nSt. Xavier's · 2018",
+    bgColor: "#3d4040",
+    textColor: "text-white",
+  },
+  {
+    id: 8,
+    tag: "ONE SENTENCE",
+    title: "To the teacher who stayed after class.",
+    body: "",
+    author: "Aarav Joshi",
+    subtext: "for Ms. Farah Ali\nPune · 2021\n\nSomebody wrote this at 2:14 AM.",
+    bgColor: "#a4c1a7",
+    textColor: "text-gray-900",
+  },
+  {
+    id: 9,
+    tag: "CLASS PHOTO",
+    title: "The people who made school feel like home.",
+    body: "Somewhere between the bells, we grew up.",
+    author: "Class 8C",
+    subtext: "for Mrs. Joseph\nKolkata · 2020",
+    bgColor: "#e8a786",
+    textColor: "text-gray-900",
+  },
+  {
+    id: 10,
+    tag: "THANK YOU",
+    title: "For making ordinary days feel important.",
+    body: "Happy Teacher's Day to the original storyteller.",
+    author: "Kabir Khan",
+    subtext: "for Mr. Joseph\nKolkata · 2020",
+    bgColor: "#a2c3d4",
+    textColor: "text-gray-900",
+  },
 ];
 
-function EnvelopeSVG({ color, flap, isOpen }: {
-  color: string; flap: string; isOpen: boolean;
-}) {
+export default function NotesSection({ onBack }: { onBack?: () => void }) {
   return (
-    <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-md">
-      {/* Dashed outer border for a cute doodle effect */}
-      <rect x="2" y="18" width="76" height="40" rx="4" fill={color} stroke="rgba(0,0,0,0.15)" strokeWidth="1.5" strokeDasharray="3, 3" />
-      
-      {/* Side flaps */}
-      <polygon points="2,58 40,36 2,18" fill={flap} opacity="0.4" />
-      <polygon points="78,58 40,36 78,18" fill={flap} opacity="0.4" />
-      
-      {/* Bottom flap */}
-      <polygon points="2,58 40,38 78,58" fill={color} stroke="rgba(0,0,0,0.1)" strokeWidth="1" strokeLinejoin="round" />
-
-      {/* Top flap (animated) */}
-      <g style={{
-          transformOrigin: "40px 18px",
-          transform: isOpen ? "perspective(200px) rotateX(-160deg)" : "rotateX(0deg)",
-          transition: "transform 0.4s ease",
-      }}>
-        {/* Back side of the top flap */}
-        <polygon points="2,18 40,2 78,18" fill={flap} opacity="0.8" />
-        {/* Front side of the top flap */}
-        <polygon points="2,18 40,38 78,18" fill={flap} stroke="rgba(0,0,0,0.15)" strokeWidth="1" strokeLinejoin="round" strokeDasharray="3,3" />
-      </g>
-
-      {/* Cute heart seal */}
-      {!isOpen && (
-        <path 
-          d="M 40 44 C 40 44, 33 37, 33 33 C 33 29, 38 27, 40 31 C 42 27, 47 29, 47 33 C 47 37, 40 44, 40 44 Z" 
-          fill="#ff4d4d" 
-          stroke="white" 
-          strokeWidth="1.5" 
-          strokeLinejoin="round" 
-        />
-      )}
-    </svg>
-  );
-}
-
-export default function NotesSection({ onBack }: { onBack: () => void }) {
-  const [openEnvelope, setOpenEnvelope] = useState<number | null>(null);
-  const [animating, setAnimating] = useState<number | null>(null);
-
-  const handleClick = (id: number) => {
-    setAnimating(id);
-    setTimeout(() => {
-      setOpenEnvelope(id);
-      setAnimating(null);
-    }, 350);
-  };
-
-  const closeModal = () => setOpenEnvelope(null);
-  const selected = envelopes.find((e) => e.id === openEnvelope);
-
-  return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-      {/* ── Top Unruled Section Title ── */}
-      <div className="absolute top-[3%] w-full px-2 z-20 pointer-events-none select-none flex justify-center items-center gap-1 sm:gap-2">
-        <p className="font-[Georgia,serif] italic text-gray-500/90 text-lg sm:text-2xl md:text-3xl font-bold tracking-wide drop-shadow-sm translate-y-2 md:translate-y-3 whitespace-nowrap">
-          we love youu teachers 
-        </p>
-        <img src="/assets/teddy.png" alt="cute snoopy" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain drop-shadow-md shrink-0" />
-      </div>
-
-
-      {/* ── Notebook ruled lines background ── */}
-      <div className="absolute inset-0 pt-14 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => (
-          <div key={i} className="w-full border-b border-blue-100/60" style={{ height: "28px" }} />
-        ))}
-      </div>
-
-      {/* ── Soft dotted paths ── */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        {/* Existing paths */}
-        <path d="M -50 200 Q 250 350, 600 150 T 1200 300" fill="transparent" stroke="#d8b4fe" strokeWidth="1.5" strokeDasharray="6, 10" />
-        <path d="M 100 500 Q 400 600, 800 400 T 1400 550" fill="transparent" stroke="#fbcfe8" strokeWidth="1.5" strokeDasharray="6, 10" />
-        <path d="M 0 80 Q 300 -30, 700 120 T 1400 50" fill="transparent" stroke="#fbcfe8" strokeWidth="1.2" strokeDasharray="5, 12" />
-        {/* Winding vector lines between envelopes */}
-        <path d="M -100 750 Q 200 650, 500 800 T 1500 700" fill="transparent" stroke="#bbf7d0" strokeWidth="1.5" strokeDasharray="6, 8" />
-        <path d="M 1200 900 Q 800 1000, 500 850 T -100 950" fill="transparent" stroke="#fde68a" strokeWidth="1.5" strokeDasharray="5, 10" />
-        {/* Connective swoops */}
-        <path d="M 200 150 Q 50 300, 300 400" fill="transparent" stroke="#a5f3fc" strokeWidth="1.2" strokeDasharray="4, 6" />
-        <path d="M 800 500 Q 950 650, 700 800" fill="transparent" stroke="#f9a8d4" strokeWidth="1.2" strokeDasharray="4, 6" />
-      </svg>
-
-      {/* ── Decorative doodles ── */}
-      {/* Hearts */}
-      <svg className="absolute top-[22%] left-[28%] w-5 h-5 text-pink-300 opacity-60 rotate-[-12deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-      <svg className="absolute top-[55%] left-[42%] w-4 h-4 text-purple-300 opacity-50 rotate-[10deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-      <svg className="absolute bottom-[20%] right-[28%] w-5 h-5 text-pink-200 opacity-70 -rotate-[8deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-
-      {/* Stars */}
-      <svg className="absolute top-[15%] right-[22%] w-4 h-4 text-yellow-300 opacity-60 rotate-[20deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-      </svg>
-      <svg className="absolute bottom-[30%] left-[33%] w-3 h-3 text-yellow-300 opacity-50 -rotate-[10deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-      </svg>
-      <svg className="absolute top-[68%] right-[12%] w-4 h-4 text-purple-300 opacity-50 rotate-[15deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-      </svg>
-
-      {/* Small outline flowers */}
-      <svg className="absolute top-[38%] right-[32%] w-7 h-7 text-pink-200 opacity-60 rotate-[12deg] pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
-        <circle cx="50" cy="50" r="10" />
-        <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" strokeLinejoin="round" />
-      </svg>
-      <svg className="absolute bottom-[15%] left-[48%] w-6 h-6 text-purple-200 opacity-50 -rotate-[18deg] pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
-        <circle cx="50" cy="50" r="10" />
-        <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" strokeLinejoin="round" />
-      </svg>
-
-      {/* Moon removed per request */}
-      {/* Cute Clouds */}
-      <svg className="absolute top-[35%] left-[5%] w-10 h-10 text-blue-200 opacity-40 pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.5 19c2.48 0 4.5-2.02 4.5-4.5 0-2.31-1.74-4.22-3.98-4.47C17.44 6.78 14.93 5 12 5 8.92 5 6.27 7.15 5.4 10.03 2.87 10.36 1 12.51 1 15c0 2.76 2.24 5 5 5h11.5z"/>
-      </svg>
-      <svg className="absolute bottom-[25%] right-[8%] w-12 h-12 text-pink-100 opacity-40 pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.5 19c2.48 0 4.5-2.02 4.5-4.5 0-2.31-1.74-4.22-3.98-4.47C17.44 6.78 14.93 5 12 5 8.92 5 6.27 7.15 5.4 10.03 2.87 10.36 1 12.51 1 15c0 2.76 2.24 5 5 5h11.5z"/>
-      </svg>
-
-      {/* Sparkles */}
-      {/* Newly added doodles for left gap */}
-      <svg className="absolute top-[58%] left-[12%] w-4 h-4 text-pink-300 opacity-60 rotate-[-15deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
-      </svg>
-      <svg className="absolute top-[55%] left-[18%] w-5 h-5 text-yellow-300 opacity-50 rotate-[30deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-      </svg>
-
-      <svg className="absolute top-[25%] left-[65%] w-4 h-4 text-yellow-400 opacity-50 rotate-[-10deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
-      </svg>
-      <svg className="absolute top-[65%] left-[25%] w-3 h-3 text-pink-300 opacity-60 rotate-[20deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
-      </svg>
-      <svg className="absolute bottom-[10%] right-[35%] w-4 h-4 text-purple-300 opacity-50 rotate-[45deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
-      </svg>
-
-      {/* Paper Airplane */}
-      <svg className="absolute top-[20%] left-[85%] w-5 h-5 text-blue-300 opacity-50 -rotate-[15deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-      </svg>
-
-      {/* Bows */}
-      <img src="/assets/bow.png" alt="bow doodle" className="absolute top-[48%] left-[85%] w-8 opacity-40 rotate-[15deg] pointer-events-none select-none drop-shadow-sm" />
-      <img src="/assets/bow.png" alt="bow doodle" className="absolute bottom-[18%] left-[15%] w-10 opacity-30 rotate-[-20deg] pointer-events-none select-none drop-shadow-sm" />
-
-      {/* ── Additional Bottom Doodles ── */}
-      <svg className="absolute bottom-[5%] left-[25%] w-6 h-6 text-yellow-300 opacity-60 rotate-[-15deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-      </svg>
-      <svg className="absolute bottom-[4%] right-[20%] w-7 h-7 text-pink-200 opacity-50 rotate-[25deg] pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
-        <circle cx="50" cy="50" r="10" />
-        <path d="M50 35 C65 15, 80 30, 60 50 C80 65, 65 85, 50 65 C35 85, 20 65, 40 50 C20 30, 35 15, 50 35 Z" strokeLinejoin="round" />
-      </svg>
-      <svg className="absolute bottom-[8%] left-[60%] w-4 h-4 text-purple-300 opacity-60 rotate-[10deg] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20M2 12h20M12 12m-6-6l12 12M6 18L18 6" />
-      </svg>
-      <svg className="absolute bottom-[3%] left-[10%] w-5 h-5 text-pink-300 opacity-60 rotate-[-12deg] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-      <img src="/assets/bow.png" alt="bow doodle" className="absolute bottom-[3%] right-[40%] w-8 opacity-40 rotate-[5deg] pointer-events-none select-none drop-shadow-sm" />
-
-
-
-      {/* Scattered envelopes */}
-      {envelopes.map((env) => (
-        <button
-          key={env.id}
-          onClick={() => handleClick(env.id)}
-          className="absolute hover:scale-110 active:scale-95 transition-transform duration-200 cursor-pointer"
-          style={{
-            top: env.top,
-            left: env.left,
-            width: "clamp(44px, 7vw, 70px)",
-            transform: `rotate(${env.rotate}) scale(${animating === env.id ? 1.15 : 1})`,
-            transition: "transform 0.2s ease",
-          }}
-        >
-          <EnvelopeSVG
-            color={env.color}
-            flap={env.flap}
-            isOpen={animating === env.id}
-          />
-        </button>
-      ))}
-
-      {/* Letter pop-up modal */}
-      {openEnvelope !== null && selected && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center"
-          onClick={closeModal}
-        >
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]" />
-          <div
-            className="relative z-10 bg-white rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.25)] p-6 md:p-10 mx-4 max-w-xs md:max-w-sm w-full"
-            style={{ transform: `rotate(${parseInt(selected.rotate) * 0.3}deg)` }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Notebook ruled lines */}
-            <div className="absolute inset-0 pt-8 pointer-events-none overflow-hidden rounded-sm">
-              {Array.from({ length: 20 }).map((_, i) => (
-                <div key={i} className="w-full border-b border-blue-100" style={{ height: "24px" }} />
-              ))}
-            </div>
-
-            {/* Washi tape at top */}
-            <div
-              className="absolute -top-3 left-1/2 w-14 h-4 rounded-sm shadow-sm"
-              style={{
-                backgroundColor: selected.flap,
-                opacity: 0.75,
-                transform: `translateX(-50%) rotate(${parseInt(selected.rotate) * -0.5}deg)`,
-              }}
-            />
-
-            {/* Cute heart sticker */}
-            <div className="relative z-10 w-6 h-6 mb-4 text-pink-400 -rotate-12 drop-shadow-sm">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-
-            {/* Letter content */}
-            <p className="relative z-10 font-[Georgia,serif] text-gray-700 text-sm md:text-base italic leading-relaxed">
-              hello
+    <div className="relative w-full h-full bg-[#f6f5f1] overflow-y-auto p-4 md:p-8 lg:p-12">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Header Title with Back button if needed */}
+        <div className="flex justify-between items-center mb-10 mt-4 px-2">
+          <div className="flex items-center gap-3">
+            <p className="font-[Georgia,serif] italic text-gray-500/90 text-2xl md:text-3xl font-bold tracking-wide">
+              we love youu teachers
             </p>
-
-            {/* Close */}
+            <img src="/assets/teddy.png" alt="cute teddy" className="w-12 h-12 md:w-16 md:h-16 object-contain drop-shadow-sm shrink-0" />
+          </div>
+          {onBack && (
             <button
-              onClick={closeModal}
-              className="relative z-10 mt-6 text-xs font-[Georgia,serif] italic text-gray-400 hover:text-gray-600 transition-colors flex items-center gap-1 group"
+              onClick={onBack}
+              className="text-sm font-[Georgia,serif] italic text-gray-500 hover:text-gray-800 transition-colors flex items-center gap-2 group bg-white/50 px-4 py-2 rounded-full shadow-sm"
             >
-              <svg className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                 <path d="M19 12H5M12 5l-7 7 7 7" />
               </svg>
-              fold it back
+              Go Back
             </button>
-          </div>
+          )}
         </div>
-      )}
+        
+        {/* Masonry Grid */}
+        <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-3 md:gap-5 space-y-3 md:space-y-5">
+          {notes.map(note => (
+            <div 
+              key={note.id} 
+              className={`break-inside-avoid shadow-sm hover:shadow-md transition-shadow flex flex-col rounded-sm p-4 md:p-6 lg:p-8`}
+              style={{ backgroundColor: note.bgColor }}
+            >
+              <p className={`text-[9px] md:text-[10px] font-sans font-semibold uppercase tracking-widest opacity-60 mb-4 md:mb-6 ${note.textColor}`}>
+                {note.tag}
+              </p>
+              <h3 className={`font-[Georgia,serif] text-lg md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-tight ${note.textColor}`}>
+                {note.title}
+              </h3>
+              {note.body && (
+                <p className={`font-[Georgia,serif] text-sm md:text-lg lg:text-xl mb-6 md:mb-8 leading-snug opacity-90 ${note.textColor}`}>
+                  {note.body}
+                </p>
+              )}
+              <div className={`mt-6 md:mt-10 text-[10px] md:text-xs opacity-70 whitespace-pre-wrap font-sans leading-relaxed ${note.textColor}`}>
+                <strong>{note.author}</strong><br/>
+                {note.subtext}
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
     </div>
   );
 }
