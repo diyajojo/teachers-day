@@ -1,59 +1,12 @@
 "use client";
 import Image from "next/image";
 
-const pages = [
-  {
-    id: 0,
-    content: (
-      <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none">
-        <p className="text-purple-400 text-xs md:text-sm tracking-widest uppercase mb-2 font-sans font-semibold">
-          A note from the other side
-        </p>
-        <p className="text-gray-700 text-sm md:text-base leading-snug mb-4">
-          Some things were left unsaid in the classroom, but we noticed and we remember. Here are a few honest, heartfelt words from the students who always meant them. ❤️
-        </p>
-        
-        <div className="flex justify-center mt-4 mb-2 relative">
-          <div className="relative group cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}>
-            {/* Washi tape effect */}
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-pink-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.1)] rotate-[-4deg] z-20 opacity-90 transition-transform duration-300 group-hover:rotate-[-2deg]"></div>
-            
-            <button
-              className="relative overflow-hidden bg-white px-8 py-3 shadow-[2px_3px_5px_rgba(0,0,0,0.15)] hover:shadow-[4px_6px_10px_rgba(0,0,0,0.2)] transition-all duration-300 group-hover:-translate-y-1 border border-gray-200 rounded-sm transform rotate-2 group-hover:rotate-0"
-            >
-              {/* Notebook lines on button */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-[14px] border-b border-blue-200"></div>
-                <div className="w-full h-[14px] border-b border-blue-200"></div>
-              </div>
-              <span className="relative z-10 font-[Georgia,serif] text-base italic font-semibold tracking-wide text-gray-700 ml-2 group-hover:text-pink-600 transition-colors">
-                Read the notes 
-              </span>
-            </button>
-          </div>
-        </div>
-
-        <div className="mt-auto flex items-end justify-between gap-3 pt-4">
-          <div />
-          <div className="flex gap-2">
-            <div className="w-10 h-10 relative">
-              <Image src="/assets/cat.png" alt="cat sticker" fill className="object-contain" />
-            </div>
-            <div className="w-10 h-10 relative">
-              <Image src="/assets/dog.png" alt="dog sticker" fill className="object-contain" />
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-  },
-];
-
-export default function Hero() {
+export default function Hero({ onReadNotes }: { onReadNotes: () => void }) {
   return (
     <section
       className="relative w-full flex-1 min-h-0 flex flex-col items-center justify-center md:flex-row md:justify-between px-4 md:px-12 lg:px-24 py-4 md:py-8 gap-4 md:gap-12"
     >
+      {/* Notebook page content */}
       {/* Background scattered decorations (static, hand-drawn aesthetic) */}
       <div className="absolute inset-0 pointer-events-none">
         
@@ -184,7 +137,43 @@ export default function Hero() {
 
           {/* Page content */}
           <div className="relative z-10 flex-1 min-h-0 overflow-y-auto">
-            {pages[0].content}
+            <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none">
+              <p className="text-purple-400 text-xs md:text-sm tracking-widest uppercase mb-2 font-sans font-semibold">
+                A note from the other side
+              </p>
+              <p className="text-gray-700 text-sm md:text-base leading-snug mb-4">
+                Some things were left unsaid in the classroom, but we noticed and we remember. Here are a few honest, heartfelt words from the students who always meant them. ❤️
+              </p>
+
+              <div className="flex justify-center mt-4 mb-2 relative">
+                <div className="relative group cursor-pointer" onClick={onReadNotes}>
+                  {/* Washi tape effect */}
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-pink-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.1)] rotate-[-4deg] z-20 opacity-90 transition-transform duration-300 group-hover:rotate-[-2deg]"></div>
+                  <button className="relative overflow-hidden bg-white px-8 py-3 shadow-[2px_3px_5px_rgba(0,0,0,0.15)] hover:shadow-[4px_6px_10px_rgba(0,0,0,0.2)] transition-all duration-300 group-hover:-translate-y-1 border border-gray-200 rounded-sm transform rotate-2 group-hover:rotate-0">
+                    <div className="absolute inset-0 pointer-events-none">
+                      <div className="w-full h-[14px] border-b border-blue-200"></div>
+                      <div className="w-full h-[14px] border-b border-blue-200"></div>
+                    </div>
+                    <span className="relative z-10 font-[Georgia,serif] text-base italic font-semibold tracking-wide text-gray-700 ml-2 group-hover:text-pink-600 transition-colors">
+                      Read the notes
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="mt-auto flex items-end justify-between gap-3 pt-4">
+                <div />
+                <div className="flex gap-2">
+                  <div className="w-10 h-10 relative">
+                    <Image src="/assets/cat.png" alt="cat sticker" fill className="object-contain" />
+                  </div>
+                  <div className="w-10 h-10 relative">
+                    <Image src="/assets/dog.png" alt="dog sticker" fill className="object-contain" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -195,7 +184,7 @@ export default function Hero() {
 
       {/* Right Column: Cuddle Pile Image - Order 1 on mobile, 2 on desktop */}
       <div className="relative z-10 flex w-[65%] max-w-[280px] md:w-full md:max-w-lg lg:max-w-2xl justify-center mx-auto md:mx-0 order-1 md:order-2 mb-2 md:mb-0">
-        <Image src="/assets/hero.png" alt="cuddle pile" width={700} height={600} className="object-contain drop-shadow-xl"/>
+        <Image src="/assets/teachers.png" alt="cuddle pile" width={700} height={600} className="object-contain drop-shadow-xl"/>
       </div>
 
     </section>

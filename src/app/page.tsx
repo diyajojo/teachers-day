@@ -1,11 +1,16 @@
+"use client";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import NotesSection from "@/components/NotesSection";
 
 export default function Home() {
+  const [view, setView] = useState<"hero" | "notes">("hero");
+
   return (
     <div className="h-[100dvh] bg-[#2e1f14] overflow-hidden flex items-center justify-center relative p-2 md:p-0">
 
-      {/* Paper clip — pinned at the top, slightly offset to match the tilt */}
+      {/* Paper clip */}
       <div className="absolute top-[3vh] md:top-[2.5vh] left-[49%] z-50 pointer-events-none -rotate-[1.5deg]">
         <svg width="30" height="56" viewBox="0 0 30 56" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -33,13 +38,19 @@ export default function Home() {
         </svg>
       </div>
 
-      {/* The canvas — rotated slightly to look casually pinned */}
+      {/* Canvas */}
       <div
         className="canvas-texture bg-[#faf6f0] w-[90vw] h-[90dvh] md:w-[94vw] md:h-[92dvh] rounded-xl md:rounded-2xl flex flex-col justify-evenly relative shadow-[0_15px_40px_rgba(0,0,0,0.5)] md:shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-hidden"
         style={{ transform: "rotate(-1.5deg)" }}
       >
-        <Navbar />
-        <Hero />
+        {view === "hero" ? (
+          <>
+            <Navbar />
+            <Hero onReadNotes={() => setView("notes")} />
+          </>
+        ) : (
+          <NotesSection onBack={() => setView("hero")} />
+        )}
       </div>
 
     </div>
