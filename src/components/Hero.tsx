@@ -184,7 +184,7 @@ export default function Hero({ onReadNotes }: { onReadNotes: () => void }) {
 
       {/* Right Column: Cuddle Pile Image - Order 1 on mobile, 2 on desktop */}
       <div className="relative z-10 flex w-[65%] max-w-[280px] md:w-full md:max-w-lg lg:max-w-2xl justify-center mx-auto md:mx-0 order-1 md:order-2 mb-2 md:mb-0">
-        <Image src="/assets/hero.png" alt="cuddle pile" width={700} height={600} className="object-contain drop-shadow-xl"/>
+        <Image src="/assets/teachers.png" alt="cuddle pile" width={700} height={600} className="object-contain drop-shadow-xl"/>
       </div>
 
     </section>
