@@ -56,7 +56,7 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
         >
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity" />
           <div 
-            className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-md shadow-2xl flex flex-col transition-transform p-6 md:p-12"
+            className="relative z-10 w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-md shadow-2xl flex flex-col p-5 pt-10 md:p-12"
             style={{ backgroundColor: selectedNote.bgColor }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -69,18 +69,18 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-            <p className={`text-xs font-sans font-semibold uppercase tracking-widest opacity-60 mb-6 ${selectedNote.textColor}`}>
+            <p className={`text-[10px] md:text-xs font-sans font-semibold uppercase tracking-widest opacity-60 mb-4 ${selectedNote.textColor}`}>
               {selectedNote.tag}
             </p>
-            <h3 className={`font-[Georgia,serif] text-3xl md:text-4xl font-bold mb-6 leading-tight break-words ${selectedNote.textColor}`}>
+            <h3 className={`font-[Georgia,serif] text-xl md:text-4xl font-bold mb-4 leading-tight break-words ${selectedNote.textColor}`}>
               {selectedNote.title}
             </h3>
             {selectedNote.body && (
-              <p className={`font-[Georgia,serif] text-lg md:text-xl mb-10 leading-relaxed opacity-95 whitespace-pre-wrap break-words ${selectedNote.textColor}`}>
+              <p className={`font-[Georgia,serif] text-sm md:text-xl mb-6 leading-relaxed opacity-95 whitespace-pre-wrap break-words ${selectedNote.textColor}`}>
                 {selectedNote.body}
               </p>
             )}
-            <div className={`mt-auto text-sm opacity-80 whitespace-pre-wrap font-sans leading-relaxed border-t border-black/10 pt-6 break-words ${selectedNote.textColor}`}>
+            <div className={`mt-auto text-xs md:text-sm opacity-80 whitespace-pre-wrap font-sans leading-relaxed border-t border-black/10 pt-4 break-words ${selectedNote.textColor}`}>
               <strong>{selectedNote.author}</strong><br/>
               {selectedNote.subtext}
             </div>
