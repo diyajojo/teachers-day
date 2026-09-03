@@ -12,10 +12,9 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
         {/* Header Title */}
         <div className="flex justify-center items-center mb-10 mt-4 px-2">
           <div className="flex items-center gap-3">
-            <p className="font-[Georgia,serif] italic text-gray-500/90 text-2xl md:text-3xl font-bold tracking-wide">
-              we love youu teachers
+            <p className="font-[Georgia,serif] italic text-gray-500/90 text-[1.1rem] sm:text-2xl md:text-3xl font-bold tracking-wide text-center whitespace-nowrap">
+              Things We Never Got to Say
             </p>
-            <img src="/assets/teddy.png" alt="cute teddy" className="w-12 h-12 md:w-16 md:h-16 object-contain drop-shadow-sm shrink-0" />
           </div>
         </div>
         
