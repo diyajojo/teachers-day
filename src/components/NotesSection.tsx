@@ -31,15 +31,15 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
               <p className={`text-[8px] md:text-[10px] font-sans font-semibold uppercase tracking-widest opacity-60 mb-4 md:mb-6 ${note.textColor}`}>
                 {note.tag}
               </p>
-              <h3 className={`font-[Georgia,serif] text-lg md:text-2xl font-bold mb-3 md:mb-4 leading-tight ${note.textColor}`}>
+              <h3 className={`font-[Georgia,serif] text-lg md:text-2xl font-bold mb-3 md:mb-4 leading-tight break-words ${note.textColor}`}>
                 {note.title}
               </h3>
               {note.body && (
-                <p className={`font-[Georgia,serif] text-sm md:text-lg mb-6 md:mb-8 leading-snug opacity-90 line-clamp-4 md:line-clamp-5 ${note.textColor}`}>
+                <p className={`font-[Georgia,serif] text-sm md:text-lg mb-6 md:mb-8 leading-snug opacity-90 line-clamp-4 md:line-clamp-5 break-words ${note.textColor}`}>
                   {note.body}
                 </p>
               )}
-              <div className={`mt-auto pt-3 text-[10px] md:text-xs opacity-70 whitespace-pre-wrap font-sans leading-relaxed ${note.textColor}`}>
+              <div className={`mt-auto pt-3 text-[10px] md:text-xs opacity-70 whitespace-pre-wrap font-sans leading-relaxed break-words ${note.textColor}`}>
                 <strong>{note.author}</strong><br/>
                 {note.subtext}
               </div>
@@ -73,15 +73,15 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
             <p className={`text-xs font-sans font-semibold uppercase tracking-widest opacity-60 mb-6 ${selectedNote.textColor}`}>
               {selectedNote.tag}
             </p>
-            <h3 className={`font-[Georgia,serif] text-3xl md:text-4xl font-bold mb-6 leading-tight ${selectedNote.textColor}`}>
+            <h3 className={`font-[Georgia,serif] text-3xl md:text-4xl font-bold mb-6 leading-tight break-words ${selectedNote.textColor}`}>
               {selectedNote.title}
             </h3>
             {selectedNote.body && (
-              <p className={`font-[Georgia,serif] text-lg md:text-xl mb-10 leading-relaxed opacity-95 whitespace-pre-wrap ${selectedNote.textColor}`}>
+              <p className={`font-[Georgia,serif] text-lg md:text-xl mb-10 leading-relaxed opacity-95 whitespace-pre-wrap break-words ${selectedNote.textColor}`}>
                 {selectedNote.body}
               </p>
             )}
-            <div className={`mt-auto text-sm opacity-80 whitespace-pre-wrap font-sans leading-relaxed border-t border-black/10 pt-6 ${selectedNote.textColor}`}>
+            <div className={`mt-auto text-sm opacity-80 whitespace-pre-wrap font-sans leading-relaxed border-t border-black/10 pt-6 break-words ${selectedNote.textColor}`}>
               <strong>{selectedNote.author}</strong><br/>
               {selectedNote.subtext}
             </div>
