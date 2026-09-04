@@ -248,5 +248,95 @@ export const notes = [
     "subtext": "Batch: 2026",
     "bgColor": "#f9a8d4",
     "textColor": "text-gray-900"
+  },
+  {
+    "id": 27,
+    "tag": "TO ALL OUR DEAR TEACHERS",
+    "title": "Happy Teachers' Day!",
+    "body": "We probably didn’t appreciate it enough back then, but having teachers who genuinely cared made a huge difference. Stepping into the working world made us realise just how much those little things mattered. Thank you for always being there for us. ❤️",
+    "author": "Anonymous",
+    "subtext": "Batch: 2023",
+    "bgColor": "#d5cce6",
+    "textColor": "text-gray-900"
+  },
+  {
+    "id": 28,
+    "tag": "TO ALL OUR DEAR TEACHERS",
+    "title": "Happy Teachers' Day!",
+    "body": "Thank you for everything. You guys made us what we are today",
+    "author": "Anonymous",
+    "subtext": "Batch: 2024",
+    "bgColor": "#f2cc8f",
+    "textColor": "text-gray-900"
+  },
+  {
+    "id": 29,
+    "tag": "TO ALL OUR DEAR TEACHERS",
+    "title": "Happy Teachers' Day!",
+    "body": "Thank you for putting up with our last minute submissions and all those sleepy faces in class. We may not have said it enough, but we really appreciate you",
+    "author": "Anonymous",
+    "subtext": "Batch: 2020",
+    "bgColor": "#bbf7d0",
+    "textColor": "text-gray-900"
+  },
+  {
+    "id": 30,
+    "tag": "TO ALL OUR DEAR TEACHERS",
+    "title": "Happy Teachers' Day!",
+    "body": "It’s only after stepping into the real world that we realise how much we took those college days for granted. The patience, guidance and little things you did for us mean a lot more now. Thank you.",
+    "author": "Anonymous",
+    "subtext": "Batch: 2023",
+    "bgColor": "#f9a8d4",
+    "textColor": "text-gray-900"
+  },
+  {
+    "id": 31,
+    "tag": "TO ALL OUR DEAR TEACHERS",
+    "title": "Happy Teachers' Day!",
+    "body": "When we were students we thought you were just doing your job. Now that we are outside, we realise how much more you actually did for us. Grateful for it, always!",
+    "author": "Anonymous",
+    "subtext": "Batch: 2025",
+    "bgColor": "#a4c1a7",
+    "textColor": "text-gray-900"
+  },
+  {
+    "id": 32,
+    "tag": "TO ALL OUR DEAR TEACHERS",
+    "title": "Happy Teachers' Day!",
+    "body": "Having teachers who actually knew us, not just our names or marks, was something we didn’t appreciate enough back then. Looking back now, grateful feels like an understatement. ❤️",
+    "author": "Anonymous",
+    "subtext": "Batch: 2022",
+    "bgColor": "#f4e285",
+    "textColor": "text-gray-900"
+  },
+  {
+    "id": 33,
+    "tag": "TO ALL OUR DEAR TEACHERS",
+    "title": "Happy Teachers' Day!",
+    "body": "Ningalude vila manassilaakan college kazhyendi vannu, Thank you for everything, Happy teachers day to all of you. ❤️",
+    "author": "Anonymous",
+    "subtext": "Batch: 2021",
+    "bgColor": "#e27c70",
+    "textColor": "text-gray-900"
+  },
+  {
+    "id": 34,
+    "tag": "TO ALL OUR DEAR TEACHERS",
+    "title": "Happy Teachers' Day!",
+    "body": "We came to college thinking we were here mainly to earn a degree, but along the way you taught us much more than what was written in our textbooks. Thank you for shaping us to what we are today🥹",
+    "author": "Anonymous",
+    "subtext": "Batch: 2026",
+    "bgColor": "#ddd6fe",
+    "textColor": "text-gray-900"
+  },
+  {
+    "id": 35,
+    "tag": "TO ALL OUR DEAR TEACHERS",
+    "title": "Happy Teachers' Day!",
+    "body": "Not every class was easy and not every semester went according to the plan, but having teachers who always tried to guide us made a huge difference.Thank you🙃",
+    "author": "Anonymous",
+    "subtext": "Batch: 2020",
+    "bgColor": "#ffffff",
+    "textColor": "text-gray-900"
   }
 ];
