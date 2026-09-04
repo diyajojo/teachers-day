@@ -4,9 +4,39 @@ import { notes } from "@/data/content";
 
 export default function NotesSection({ onBack }: { onBack?: () => void }) {
   const [selectedNote, setSelectedNote] = useState<typeof notes[0] | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const openNote = (note: typeof notes[0]) => {
+    setIsClosing(false);
+    setSelectedNote(note);
+  };
+
+  const closeNote = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setSelectedNote(null);
+      setIsClosing(false);
+    }, 320);
+  };
 
   return (
     <div className="relative w-full h-full bg-[#f6f5f1] overflow-y-auto p-4 md:p-8 lg:p-12">
+
+      <style>{`
+        @keyframes letterUnfold {
+          0%   { opacity: 0; transform: scaleY(0.04) rotateX(45deg) translateY(-20px); transform-origin: top center; }
+          45%  { opacity: 1; transform: scaleY(1.03) rotateX(-3deg) translateY(0); transform-origin: top center; }
+          72%  { transform: scaleY(0.985) rotateX(1.5deg); transform-origin: top center; }
+          100% { opacity: 1; transform: scaleY(1) rotateX(0deg); transform-origin: top center; }
+        }
+        @keyframes letterFold {
+          0%   { opacity: 1; transform: scaleY(1) rotateX(0deg); transform-origin: top center; }
+          100% { opacity: 0; transform: scaleY(0.04) rotateX(35deg) translateY(-20px); transform-origin: top center; }
+        }
+        @keyframes backdropIn  { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes backdropOut { from { opacity: 1; } to { opacity: 0; } }
+      `}</style>
+
       <div className="max-w-7xl mx-auto">
         
         {/* Header Title */}
@@ -23,7 +53,7 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
           {notes.map((note, index) => (
             <div 
               key={note.id} 
-              onClick={() => setSelectedNote(note)}
+              onClick={() => openNote(note)}
               className={`break-inside-avoid shadow-sm hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer flex flex-col rounded-sm p-6 md:p-14 ${index % 2 === 0 ? 'rotate-1' : '-rotate-1 hover:rotate-0'}`}
               style={{ backgroundColor: note.bgColor }}
             >
@@ -52,16 +82,32 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
       {selectedNote && (
         <div 
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
-          onClick={() => setSelectedNote(null)}
+          style={{ perspective: "1400px" }}
+          onClick={closeNote}
         >
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity" />
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            style={{
+              animation: isClosing
+                ? "backdropOut 0.32s ease forwards"
+                : "backdropIn 0.28s ease forwards",
+            }}
+          />
+
+          {/* Letter modal */}
           <div 
             className="relative z-10 w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-md shadow-2xl flex flex-col p-5 pt-10 md:p-12"
-            style={{ backgroundColor: selectedNote.bgColor }}
+            style={{
+              backgroundColor: selectedNote.bgColor,
+              animation: isClosing
+                ? "letterFold 0.32s cubic-bezier(0.4, 0, 1, 1) forwards"
+                : "letterUnfold 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             <button 
-              onClick={() => setSelectedNote(null)}
+              onClick={closeNote}
               className={`absolute top-4 right-4 md:top-6 md:right-6 opacity-50 hover:opacity-100 transition-opacity ${selectedNote.textColor}`}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
