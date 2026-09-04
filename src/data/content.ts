@@ -101,7 +101,7 @@ export const notes = [
   },
   {
     "id": 11,
-    "tag": "TO KIRAN MARY MATTHEW",
+    "tag": "TO KIRAN MARY MATHEW",
     "title": "Happy Teachers' Day!",
     "body": "Everyone would agree that she was a dedicated and amiable teacher. Although she commanded great respect as a teacher, we could always relate to her like an elder sister.",
     "author": "Parthiv",
@@ -117,16 +117,6 @@ export const notes = [
     "author": "Joyel Jinson",
     "subtext": "Batch: 2026",
     "bgColor": "#d5cce6",
-    "textColor": "text-gray-900"
-  },
-  {
-    "id": 13,
-    "tag": "TO EEE",
-    "title": "Happy Teachers' Day!",
-    "body": "Teach properly and not just read from ur ppt .Teach them properly,take care of them individually,talk to them ,ask about their dreams ,and guide their journey on what careers they would like",
-    "author": "Anonymous",
-    "subtext": "Batch: 2025",
-    "bgColor": "#a2c3d4",
     "textColor": "text-gray-900"
   },
   {
@@ -181,7 +171,7 @@ export const notes = [
   },
   {
     "id": 19,
-    "tag": "TO DR. JAYACHANDRAN",
+    "tag": "TO DR. JAYACHANDRAN AND DR.BINDHU V",
     "title": "Happy Teachers' Day!",
     "body": "Thank you, Sir and Ma'am, for all your support during Excel 2025. It was a genuinely tough undertaking, and your guidance from day one of the core handover meant a lot to us. There were moments we were stuck and exhausted and didn't know how to move forward — thank you for holding us up through those times. We couldn't have pulled off Excel 2025, through its best and hardest moments, without your support.",
     "author": "Rohit Jose",
