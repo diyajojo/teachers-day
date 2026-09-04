@@ -19,22 +19,22 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
         </div>
         
         {/* Masonry Grid */}
-        <div className="columns-2 sm:columns-3 lg:columns-4 gap-3 md:gap-6 space-y-3 md:space-y-6">
+        <div className="columns-1 sm:columns-2 lg:columns-2 xl:columns-3 gap-4 md:gap-10 space-y-4 md:space-y-10">
           {notes.map((note, index) => (
             <div 
               key={note.id} 
               onClick={() => setSelectedNote(note)}
-              className={`break-inside-avoid shadow-sm hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer flex flex-col rounded-sm p-4 md:p-8 ${index % 2 === 0 ? 'rotate-1' : '-rotate-1 hover:rotate-0'}`}
+              className={`break-inside-avoid shadow-sm hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer flex flex-col rounded-sm p-6 md:p-14 ${index % 2 === 0 ? 'rotate-1' : '-rotate-1 hover:rotate-0'}`}
               style={{ backgroundColor: note.bgColor }}
             >
               <p className={`text-[8px] md:text-[10px] font-sans font-semibold uppercase tracking-widest opacity-60 mb-4 md:mb-6 ${note.textColor}`}>
                 {note.tag}
               </p>
-              <h3 className={`font-[Georgia,serif] text-lg md:text-2xl font-bold mb-3 md:mb-4 leading-tight break-words ${note.textColor}`}>
+              <h3 className={`font-[Georgia,serif] text-xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight break-words ${note.textColor}`}>
                 {note.title}
               </h3>
               {note.body && (
-                <p className={`font-[Georgia,serif] text-sm md:text-lg mb-6 md:mb-8 leading-snug opacity-90 line-clamp-4 md:line-clamp-5 break-words ${note.textColor}`}>
+                <p className={`font-[Georgia,serif] text-base md:text-2xl mb-8 md:mb-10 leading-snug opacity-90 line-clamp-4 md:line-clamp-5 break-words ${note.textColor}`}>
                   {note.body}
                 </p>
               )}
