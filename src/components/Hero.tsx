@@ -136,38 +136,40 @@ export default function Hero({ onReadNotes }: { onReadNotes: () => void }) {
           </div>
 
           {/* Page content */}
-          <div className="relative z-10 flex-1 min-h-0 overflow-y-auto">
-            <div className="flex flex-col h-full p-6 md:p-10 font-[Georgia,serif] select-none">
-              <p className="text-purple-400 text-xs md:text-sm tracking-widest uppercase mb-2 font-sans font-semibold">
-                A note from the other side
-              </p>
-              <p className="text-gray-700 text-sm md:text-base leading-snug mb-4">
+          <div className="relative z-10 flex-1 min-h-0 overflow-hidden">
+            <div className="flex flex-col h-full p-4 sm:p-6 md:p-10 font-[Georgia,serif] select-none justify-between">
+              <div>
+                <p className="text-purple-400 text-[10px] sm:text-xs md:text-sm tracking-widest uppercase mb-1 sm:mb-2 font-sans font-semibold">
+                  A note from the other side
+                </p>
+                <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-snug mb-2 sm:mb-4">
            There were probably a lot of things we never said in class. The little things you did, the moments we remember and the ones that stayed with us. Here are a few messages from your students, things we may not have said then, but always meant. ❤️
-              </p>
+                </p>
+              </div>
 
-              <div className="flex justify-center mt-4 mb-2 relative">
+              <div className="flex justify-center my-2 sm:my-4 relative scale-[0.85] sm:scale-100 origin-center">
                 <div className="relative group cursor-pointer" onClick={onReadNotes}>
                   {/* Washi tape effect */}
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-pink-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.1)] rotate-[-4deg] z-20 opacity-90 transition-transform duration-300 group-hover:rotate-[-2deg]"></div>
-                  <button className="relative overflow-hidden bg-white px-8 py-3 shadow-[2px_3px_5px_rgba(0,0,0,0.15)] hover:shadow-[4px_6px_10px_rgba(0,0,0,0.2)] transition-all duration-300 group-hover:-translate-y-1 border border-gray-200 rounded-sm transform rotate-2 group-hover:rotate-0">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-4 sm:h-5 bg-pink-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.1)] rotate-[-4deg] z-20 opacity-90 transition-transform duration-300 group-hover:rotate-[-2deg]"></div>
+                  <button className="relative overflow-hidden bg-white px-6 py-2 sm:px-8 sm:py-3 shadow-[2px_3px_5px_rgba(0,0,0,0.15)] hover:shadow-[4px_6px_10px_rgba(0,0,0,0.2)] transition-all duration-300 group-hover:-translate-y-1 border border-gray-200 rounded-sm transform rotate-2 group-hover:rotate-0">
                     <div className="absolute inset-0 pointer-events-none">
-                      <div className="w-full h-[14px] border-b border-blue-200"></div>
-                      <div className="w-full h-[14px] border-b border-blue-200"></div>
+                      <div className="w-full h-[10px] sm:h-[14px] border-b border-blue-200"></div>
+                      <div className="w-full h-[10px] sm:h-[14px] border-b border-blue-200"></div>
                     </div>
-                    <span className="relative z-10 font-[Georgia,serif] text-base italic font-semibold tracking-wide text-gray-700 ml-2 group-hover:text-pink-600 transition-colors">
+                    <span className="relative z-10 font-[Georgia,serif] text-sm sm:text-base italic font-semibold tracking-wide text-gray-700 ml-2 group-hover:text-pink-600 transition-colors">
                       Some words for you ❤️
                     </span>
                   </button>
                 </div>
               </div>
 
-              <div className="mt-auto flex items-end justify-between gap-3 pt-4">
+              <div className="flex items-end justify-between gap-2 sm:gap-3 pt-1 sm:pt-4">
                 <div />
-                <div className="flex gap-2">
-                  <div className="w-10 h-10 relative">
+                <div className="flex gap-1 sm:gap-2">
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 relative">
                     <Image src="/assets/cat.png" alt="cat sticker" fill className="object-contain" />
                   </div>
-                  <div className="w-10 h-10 relative">
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 relative">
                     <Image src="/assets/dog.png" alt="dog sticker" fill className="object-contain" />
                   </div>
                 </div>
