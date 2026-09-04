@@ -10,7 +10,7 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
       <div className="max-w-7xl mx-auto">
         
         {/* Header Title */}
-        <div className="flex justify-center items-center mb-10 mt-4 px-2">
+        <div className="flex justify-center items-center mb-10 mt-12 md:mt-6 px-2">
           <div className="flex items-center gap-3">
             <p className="font-[Georgia,serif] italic text-gray-500/90 text-[1.1rem] sm:text-2xl md:text-3xl font-bold tracking-wide text-center whitespace-nowrap">
               Things We Never Got to Say
