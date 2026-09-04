@@ -78,14 +78,14 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
 
       </div>
 
-      {/* Note Popup Modal */}
+     
       {selectedNote && (
         <div 
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
           style={{ perspective: "1400px" }}
           onClick={closeNote}
         >
-          {/* Backdrop */}
+        
           <div
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
             style={{
