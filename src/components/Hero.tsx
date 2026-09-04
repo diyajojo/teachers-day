@@ -142,7 +142,7 @@ export default function Hero({ onReadNotes }: { onReadNotes: () => void }) {
                 A note from the other side
               </p>
               <p className="text-gray-700 text-sm md:text-base leading-snug mb-4">
-                Some things were left unsaid in the classroom, but we noticed and we remember. Here are a few honest, heartfelt words from the students who always meant them. ❤️
+           There were probably a lot of things we never said in class. The little things you did, the moments we remember and the ones that stayed with us. Here are a few messages from your students, things we may not have said then, but always meant. ❤️
               </p>
 
               <div className="flex justify-center mt-4 mb-2 relative">
@@ -155,7 +155,7 @@ export default function Hero({ onReadNotes }: { onReadNotes: () => void }) {
                       <div className="w-full h-[14px] border-b border-blue-200"></div>
                     </div>
                     <span className="relative z-10 font-[Georgia,serif] text-base italic font-semibold tracking-wide text-gray-700 ml-2 group-hover:text-pink-600 transition-colors">
-                      Read the notes
+                      Some words for you ❤️
                     </span>
                   </button>
                 </div>
