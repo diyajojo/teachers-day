@@ -49,12 +49,12 @@ export default function NotesSection({ onBack }: { onBack?: () => void }) {
         </div>
         
         {/* Masonry Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-2 xl:columns-3 gap-4 md:gap-10 space-y-4 md:space-y-10">
+        <div className="columns-2 lg:columns-2 xl:columns-3 gap-3 md:gap-10 space-y-3 md:space-y-10">
           {notes.map((note, index) => (
             <div 
               key={note.id} 
               onClick={() => openNote(note)}
-              className={`break-inside-avoid shadow-sm hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer flex flex-col rounded-sm p-6 md:p-14 ${index % 2 === 0 ? 'rotate-1' : '-rotate-1 hover:rotate-0'}`}
+              className={`break-inside-avoid shadow-sm hover:shadow-md transition-all hover:-translate-y-1 cursor-pointer flex flex-col rounded-sm p-4 md:p-14 ${index % 2 === 0 ? 'rotate-1' : '-rotate-1 hover:rotate-0'}`}
               style={{ backgroundColor: note.bgColor }}
             >
               <p className={`text-[8px] md:text-[10px] font-sans font-semibold uppercase tracking-widest opacity-60 mb-4 md:mb-6 ${note.textColor}`}>
